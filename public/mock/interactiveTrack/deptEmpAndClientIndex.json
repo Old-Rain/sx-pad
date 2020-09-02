@@ -1,0 +1,165 @@
+{
+  "code": "00",
+  "message": "成功",
+  "data": {
+    "targetId": "D1001",
+    "targetName": "部门1",
+    "trackTime": "2020-08",
+    "dataCutoffTime": "2020-07-03",
+    "indicatorType": "2",
+    "indicatorRes": {
+      "secondaryResList": [
+        {
+          "secondaryType": "A",
+          "secondaryName": "主顾积累",
+          "fieldIndicatorResList": [
+            {
+              "id": "22204a904c144c08beba8fb4d77c7135",
+              "fieldNo": "A001",
+              "fieldIndicatorName": "口袋E新增准客户",
+              "indexUnit": "人",
+              "currentSituation": "70",
+              "lastYearData": "80",
+              "areaAverage": "80"
+            },
+            {
+              "id": "c69f2eb333ba4343baaab43b3bb611a3",
+              "fieldNo": "A002",
+              "fieldIndicatorName": "新增金管家注册数",
+              "indexUnit": "人",
+              "currentSituation": "70",
+              "lastYearData": "90",
+              "areaAverage": "90"
+            },
+            {
+              "id": "c69f2eb328ba4343b677b43b3bb611a3",
+              "fieldNo": "A003",
+              "fieldIndicatorName": "金管家活跃人数",
+              "indexUnit": "人",
+              "currentSituation": "70",
+              "lastYearData": "60",
+              "areaAverage": "50"
+            },
+            {
+              "id": "c69f2eb328888843b677b43b3bb611a3",
+              "fieldNo": "A004",
+              "fieldIndicatorName": "金管家绑卡人数",
+              "indexUnit": "人",
+              "currentSituation": "70",
+              "lastYearData": "80",
+              "areaAverage": "60"
+            }
+          ]
+        },
+        {
+          "secondaryType": "B",
+          "secondaryName": "互动开拓",
+          "fieldIndicatorResList": [
+            {
+              "id": "22204a904c144c08beba8fb4dssc7135",
+              "fieldNo": "B001",
+              "fieldIndicatorName": "口袋E转发量",
+              "indexUnit": "次",
+              "currentSituation": "30",
+              "lastYearData": "24",
+              "areaAverage": "34"
+            },
+            {
+              "id": "c69f2eb333bcc343baaab43b3bb611a3",
+              "fieldNo": "B002",
+              "fieldIndicatorName": "客户名单查看量",
+              "indexUnit": "人",
+              "currentSituation": "50",
+              "lastYearData": "40",
+              "areaAverage": "40"
+            },
+            {
+              "id": "c7892eb328aaaaa3b677b43b3bb611a3",
+              "fieldNo": "B003",
+              "fieldIndicatorName": "钩子产品-产养健购买件数",
+              "indexUnit": "件",
+              "currentSituation": "40",
+              "lastYearData": "40",
+              "areaAverage": "40"
+            },
+            {
+              "id": "c69f123328888843b677b43b3bb611a3",
+              "fieldNo": "B004",
+              "fieldIndicatorName": "线上直播邀约人数",
+              "indexUnit": "人",
+              "currentSituation": "40",
+              "lastYearData": "50",
+              "areaAverage": "50"
+            }
+          ]
+        },
+        {
+          "secondaryType": "C",
+          "secondaryName": "寿险促成",
+          "fieldIndicatorResList": [
+            {
+              "id": "22204d564c144c08beba8fb4dssc7135",
+              "fieldNo": "C001",
+              "fieldIndicatorName": "口袋E扫码数",
+              "indexUnit": "次",
+              "currentSituation": "26",
+              "lastYearData": null,
+              "areaAverage": null
+            },
+            {
+              "id": "c69f2ec333bcc343baaab43b3bb711a3",
+              "fieldNo": "C002",
+              "fieldIndicatorName": "产说会参会人数",
+              "indexUnit": "人",
+              "currentSituation": null,
+              "lastYearData": null,
+              "areaAverage": null
+            },
+            {
+              "id": "a7892eb328aaaaa3b677b43b3bb611a3",
+              "fieldNo": "C003",
+              "fieldIndicatorName": "建议书制作量",
+              "indexUnit": "份",
+              "currentSituation": "95",
+              "lastYearData": null,
+              "areaAverage": null
+            },
+            {
+              "id": "cg9f1233a8888843b677b43b3bb611a3",
+              "fieldNo": "C004",
+              "fieldIndicatorName": "投保书制作量",
+              "indexUnit": "份",
+              "currentSituation": "45",
+              "lastYearData": null,
+              "areaAverage": "66"
+            },
+            {
+              "id": "cg9f123ed8888843b677b43b3bb611a3",
+              "fieldNo": "C005",
+              "fieldIndicatorName": "长险件数",
+              "indexUnit": "件",
+              "currentSituation": "42",
+              "lastYearData": "66",
+              "areaAverage": null
+            }
+          ]
+        },
+        {
+          "secondaryType": "D",
+          "secondaryName": "服务经营",
+          "fieldIndicatorResList": [
+            {
+              "id": "22b04d564c144c08beba8fb4dssc7135",
+              "fieldNo": "D001",
+              "fieldIndicatorName": "“标准服务5+5”服务完成率",
+              "indexUnit": "%",
+              "currentSituation": "26.7894",
+              "lastYearData": "88.6",
+              "areaAverage": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

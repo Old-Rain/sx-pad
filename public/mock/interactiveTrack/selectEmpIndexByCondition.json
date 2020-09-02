@@ -1,0 +1,114 @@
+{
+  "code": "00",
+  "message": "成功",
+  "data": [
+    {
+      "fieldNo": "A001",
+      "targetName": "张三1",
+      "targetId": "E1001",
+      "fieldIndicatorName": "口袋E新增准客户",
+      "currentSituation": "80",
+      "targetType": "3",
+      "id": "afd597d536354578v7626v41cv31vdfcb"
+    },
+    {
+      "fieldNo": "A001",
+      "targetName": "张三2",
+      "targetId": "E1002",
+      "fieldIndicatorName": "口袋E新增准客户",
+      "currentSituation": "79",
+      "targetType": "3",
+      "id": "bfd597d536354578v7626v41cv31vdfcb"
+    },
+    {
+      "fieldNo": "A001",
+      "targetName": "张三3",
+      "targetId": "E1003",
+      "fieldIndicatorName": "口袋E新增准客户",
+      "currentSituation": "78",
+      "targetType": "3",
+      "id": "cfd597d536354578v7626v41cv31vdfcb"
+    },
+    {
+      "fieldNo": "A001",
+      "targetName": "张三4",
+      "targetId": "E1004",
+      "fieldIndicatorName": "口袋E新增准客户",
+      "currentSituation": "77",
+      "targetType": "3",
+      "id": "dfd597d536354578v7626v41cv31vdfcb"
+    },
+    {
+      "fieldNo": "A001",
+      "targetName": "张三5",
+      "targetId": "E1005",
+      "fieldIndicatorName": "口袋E新增准客户",
+      "currentSituation": "76",
+      "targetType": "3",
+      "id": "efd597d536354578v7626v41cv31vdfcb"
+    },
+    {
+      "fieldNo": "A001",
+      "targetName": "张三6",
+      "targetId": "E1006",
+      "fieldIndicatorName": "口袋E新增准客户",
+      "currentSituation": "75",
+      "targetType": "3",
+      "id": "ffd597d536354578v7626v41cv31vdfcb"
+    },
+    {
+      "fieldNo": "A001",
+      "targetName": "张三7",
+      "targetId": "E1007",
+      "fieldIndicatorName": "口袋E新增准客户",
+      "currentSituation": "74",
+      "targetType": "3",
+      "id": "gfd597d536354578v7626v41cv31vdfcb"
+    },
+    {
+      "fieldNo": "A001",
+      "targetName": "张三8",
+      "targetId": "E1008",
+      "fieldIndicatorName": "口袋E新增准客户",
+      "currentSituation": "73",
+      "targetType": "3",
+      "id": "hfd597d536354578v7626v41cv31vdfcb"
+    },
+    {
+      "fieldNo": "A001",
+      "targetName": "张三9",
+      "targetId": "E1009",
+      "fieldIndicatorName": "口袋E新增准客户",
+      "currentSituation": "72",
+      "targetType": "3",
+      "id": "ifd597d536354578v7626v41cv31vdfcb"
+    },
+    {
+      "fieldNo": "A001",
+      "targetName": "张三a",
+      "targetId": "E1010",
+      "fieldIndicatorName": "口袋E新增准客户",
+      "currentSituation": "71",
+      "targetType": "3",
+      "id": "jfd597d536354578v7626v41cv31vdfcb"
+    },
+    {
+      "fieldNo": "A001",
+      "targetName": "张三b",
+      "targetId": "E1011",
+      "fieldIndicatorName": "口袋E新增准客户",
+      "currentSituation": "70",
+      "targetType": "3",
+      "id": "kfd597d536354578v7626v41cv31vdfcb"
+    },
+    {
+      "fieldNo": "A012",
+      "targetName": "张三c",
+      "targetId": "E1012",
+      "fieldIndicatorName": "口袋E新增准客户",
+      "currentSituation": "69",
+      "targetType": "3",
+      "id": "ld597d536354578v7626v41cv31vdfcb"
+    }
+  ]
+}

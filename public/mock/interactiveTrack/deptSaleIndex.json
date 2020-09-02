@@ -1,0 +1,90 @@
+{
+  "code": "00",
+  "message": "成功",
+  "data": [
+    {
+      "secondaryType": "",
+      "targetName": "部门1",
+      "fieldIndicatorName": "部总FYC",
+      "currentSituation": "80",
+      "fieldNo": "S001",
+      "areaAverage": "80",
+      "secondaryName": "",
+      "indicatorType": "1",
+      "trackTime": "2020-07",
+      "lastYearData": "80",
+      "dataCutoffTime": "2020-07-03",
+      "id": "894f752600b74197a6706c1be4c00244"
+    },
+    {
+      "secondaryType": "",
+      "targetName": "部门1",
+      "fieldIndicatorName": "部总FYP",
+      "currentSituation": "90",
+      "fieldNo": "S002",
+      "areaAverage": "90",
+      "secondaryName": "",
+      "indicatorType": "1",
+      "trackTime": "2020-07",
+      "lastYearData": "90",
+      "dataCutoffTime": "2020-07-03",
+      "id": "a94f752600b74197a606c1be4c00244"
+    },
+    {
+      "secondaryType": "",
+      "targetName": "部门1",
+      "fieldIndicatorName": "部人均FYC",
+      "currentSituation": "91",
+      "fieldNo": "S003",
+      "areaAverage": "91",
+      "secondaryName": "",
+      "indicatorType": "1",
+      "trackTime": "2020-07",
+      "lastYearData": "91",
+      "dataCutoffTime": "2020-07-03",
+      "id": "b94f752600b74197a6706c1be4c00244"
+    },
+    {
+      "secondaryType": "",
+      "targetName": "部门1",
+      "fieldIndicatorName": "部钻石占比",
+      "currentSituation": "92",
+      "fieldNo": "S004",
+      "areaAverage": "92",
+      "secondaryName": "",
+      "indicatorType": "1",
+      "trackTime": "2020-07",
+      "lastYearData": "92",
+      "dataCutoffTime": "2020-07-03",
+      "id": "c94f752600b74197a6706c1be4c00244"
+    },
+    {
+      "secondaryType": "",
+      "targetName": "部门1",
+      "fieldIndicatorName": "部钻会占比",
+      "currentSituation": "93",
+      "fieldNo": "S005",
+      "areaAverage": "93",
+      "secondaryName": "",
+      "indicatorType": "1",
+      "trackTime": "2020-07",
+      "lastYearData": "93",
+      "dataCutoffTime": "2020-07-03",
+      "id": "d94f752600b74197a6706c1be4c00244"
+    },
+    {
+      "secondaryType": "",
+      "targetName": "部门1",
+      "fieldIndicatorName": "部有效活动率",
+      "currentSituation": "94",
+      "fieldNo": "S006",
+      "areaAverage": "94",
+      "secondaryName": "",
+      "indicatorType": "1",
+      "trackTime": "2020-07",
+      "lastYearData": "94",
+      "dataCutoffTime": "2020-07-03",
+      "id": "e94f752600b74197a6706c1be4c00244"
+    }
+  ]
+}

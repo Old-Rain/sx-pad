@@ -1,0 +1,22 @@
+@import '~@/styles/global.scss';
+
+.App {
+  height: 100vh;
+
+  .AppBody {
+    display: flex;
+    height: calc(100% - 48px);
+
+    aside {
+      width: 166px;
+      background: $themeColor;
+      overflow: scroll;
+    }
+
+    article {
+      flex: 1;
+      background: #f5f5fb;
+      overflow: scroll;
+    }
+  }
+}

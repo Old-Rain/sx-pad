@@ -1,5 +1,16 @@
 $fontSizeTitle: 16px;
+$themeColor: #7a83cc;
 $textColorPrimary: #333;
 $textColorSub1: #666;
 $textColorSub2: #999;
 $textColorTip: #ccc;
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+    clear: both;
+  }
+}

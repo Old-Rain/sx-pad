@@ -35,14 +35,6 @@ li {
   list-style: none;
 }
 
-.clearBoth::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 0;
-  clear: both;
-}
-
 #root {
   height: 100vh;
   overflow: auto;

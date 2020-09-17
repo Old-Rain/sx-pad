@@ -24,6 +24,12 @@
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 8px 24px 0 rgba(38, 20, 3, 0.14);
+
+      .canvas {
+        display: block;
+        width: 300px;
+        height: 300px;
+      }
     }
   }
 }

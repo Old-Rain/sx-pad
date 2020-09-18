@@ -1,6 +1,8 @@
 import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Switch, Redirect, Route, Link } from 'react-router-dom'
 
+import store from '@/store'
+
 import styles from './App.module.scss'
 
 import Login from './views/Login'
@@ -24,7 +26,11 @@ function App() {
                     <Link to="/hdgl">hdgl</Link>
                   </aside>
                   <article>
-                    <Route path="/" exact render={() => <Redirect to="/home" />} />
+                    <Route
+                      path="/"
+                      exact
+                      render={() => <Redirect to={store.getState().userModule.userInfo.token ? '/home' : '/login'} />}
+                    />
                     <Route path="/home" component={() => <div>home</div>} />
                     <Route path="/hdgl" component={() => <div>hdgl</div>} />
                   </article>

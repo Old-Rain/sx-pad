@@ -35,6 +35,14 @@ li {
   list-style: none;
 }
 
+button {
+  display: block;
+  border: 0;
+  padding: 0;
+  outline: none;
+  background: transparent;
+}
+
 #root {
   height: 100vh;
   overflow: auto;

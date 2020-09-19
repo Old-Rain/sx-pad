@@ -25,10 +25,63 @@
       border-radius: 16px;
       box-shadow: 0 8px 24px 0 rgba(38, 20, 3, 0.14);
 
-      .canvas {
-        display: block;
-        width: 300px;
-        height: 300px;
+      .qrcodeWrap {
+        padding-top: 16px;
+
+        .qrcode {
+          position: relative;
+          margin: 0 auto;
+          width: 180px;
+
+          .canvas {
+            display: block;
+            width: 180px;
+            height: 180px;
+          }
+
+          .reload {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 180px;
+            height: 180px;
+            background: rgba(0, 0, 0, 0.4);
+
+            i {
+              width: 24px;
+              height: 24px;
+              background: url('~@/assets/spirit.png') no-repeat 0 0;
+              background-size: 100%;
+            }
+
+            span {
+              color: #fff;
+              font-size: 12px;
+            }
+          }
+        }
+
+        p {
+          margin: 16px auto 0;
+          width: 180px;
+          font-size: 12px;
+          text-align: center;
+          color: $textColorSub2;
+        }
+
+        button {
+          margin: 12px auto 0;
+          width: 130px;
+          height: 32px;
+          background: linear-gradient(to bottom, #fdc159, #fa891f);
+          border-radius: 100px;
+          font-size: 12px;
+          color: #fff;
+        }
       }
     }
   }

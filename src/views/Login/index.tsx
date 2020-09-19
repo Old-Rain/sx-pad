@@ -7,18 +7,23 @@ import QRCode from 'qrcode'
 import logo from '@/assets/logo.png'
 import styles from './index.module.scss'
 
+import FormTab from './components/FormTab'
+import FromTabItem from './components/FromTabItem'
+
 import { login as loginAPI, loginQRCode } from '@/api/login'
 import { UserInfo } from '@/store/modules/user/types'
 
 interface LoginProps extends RouteComponentProps {}
 
 const Login: FC<LoginProps> = (props: PropsWithChildren<LoginProps>) => {
+  //
   const [qrcodeStatus, setQrcodeStatus] = useState<0 | 1>(1)
 
-  const canvas = useRef<HTMLCanvasElement>(null)
+  const qrcodeCanvas = useRef<HTMLCanvasElement>(null)
 
   const qrcodeTimer = useRef<NodeJS.Timeout | null>(null)
 
+  // 二维码过期即时
   useEffect(() => {
     getQRCode()
 
@@ -27,24 +32,27 @@ const Login: FC<LoginProps> = (props: PropsWithChildren<LoginProps>) => {
     }
   }, [])
 
+  // 获取二维码并渲染
   async function getQRCode() {
     const { data: res } = await loginQRCode<string>()
 
     setQrcodeStatus(1)
 
     QRCode.toCanvas(
-      canvas.current,
+      qrcodeCanvas.current,
       `${res.data}${Math.random()}`,
-      { width: (window.innerWidth * 300) / 1366 },
+      { width: (window.innerWidth * 180) / 1366 },
       function (error) {
         if (error) console.error(error)
         console.log('success!')
       },
     )
 
-    qrcodeTimer.current = setTimeout(() => setQrcodeStatus(0), 5000)
+    // 二维码1分钟后过期
+    qrcodeTimer.current = setTimeout(() => setQrcodeStatus(0), 60000)
   }
 
+  // 账号密码登录
   async function login() {
     const { data: res } = await loginAPI<UserInfo>({ username: '', password: '' })
     console.log(res)
@@ -59,11 +67,28 @@ const Login: FC<LoginProps> = (props: PropsWithChildren<LoginProps>) => {
         </h1>
 
         <div className={styles.form}>
-          <button onClick={login}>login</button>
-          <canvas ref={canvas} className={styles.canvas}></canvas>
-          <div style={{ display: qrcodeStatus ? 'none' : 'block' }} onClick={getQRCode}>
-            刷新
-          </div>
+          <FormTab>
+            <FromTabItem label="扫码登录">
+              <div className={styles.qrcodeWrap}>
+                <div className={styles.qrcode}>
+                  <canvas ref={qrcodeCanvas} className={styles.canvas}></canvas>
+                  <div
+                    className={styles.reload}
+                    style={{ display: qrcodeStatus ? 'none' : 'flex' }}
+                    onClick={getQRCode}
+                  >
+                    <i></i>
+                    <span>刷新</span>
+                  </div>
+                </div>
+                <p>请使用5.15及以上版本的口袋e扫码登录</p>
+                <button>下载口袋e</button>
+              </div>
+            </FromTabItem>
+            <FromTabItem label="账号登录">
+              <button onClick={login}>login</button>
+            </FromTabItem>
+          </FormTab>
         </div>
       </div>
     </div>

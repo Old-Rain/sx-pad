@@ -1,6 +1,8 @@
-@import '~@/styles/global.scss';
+@import "~@/styles/global.scss";
 
 .FormTab {
+  height: 100%;
+
   .tabs {
     display: flex;
     height: 50px;
@@ -12,7 +14,7 @@
       display: flex;
       justify-content: center;
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         right: 0;
         top: 18px;
@@ -34,7 +36,7 @@
       &.active span {
         color: $themeColor;
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           left: 0;
           bottom: 0;
@@ -43,6 +45,14 @@
           background: $themeColor;
         }
       }
+    }
+  }
+
+  .tabItem {
+    height: calc(100% - 50px);
+
+    & > div {
+      height: 100%;
     }
   }
 }

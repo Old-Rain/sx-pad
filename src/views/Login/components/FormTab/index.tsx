@@ -6,11 +6,12 @@ import styles from './index.module.scss'
 import { FromTabItemProps } from '../FromTabItem'
 
 interface FormTabProps {
+  defaultActived?: number
   children: ReactElement<FromTabItemProps>[] // 子属性必须为FromTabItem组件（虽然不用FromTabItemProps也不会报错，但是这样写有提示）
 }
 
 const FormTab: FC<FormTabProps> = (props: PropsWithChildren<FormTabProps>) => {
-  const [actived, setActived] = useState<number>(0)
+  const [actived, setActived] = useState<number>(props.defaultActived || 0)
 
   return (
     <div className={styles.FormTab}>
@@ -24,11 +25,13 @@ const FormTab: FC<FormTabProps> = (props: PropsWithChildren<FormTabProps>) => {
       </div>
 
       {/* 内容 */}
-      {props.children.map((item, index) => (
-        <div key={index} style={{ display: actived === index ? 'block' : 'none' }}>
-          {item}
-        </div>
-      ))}
+      <div className={styles.tabItem}>
+        {props.children.map((item, index) => (
+          <div key={index} style={{ display: actived === index ? 'block' : 'none' }}>
+            {item}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

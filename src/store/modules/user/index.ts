@@ -1,6 +1,6 @@
 import { Reducer } from 'redux'
 
-import { CommonAction } from '@/store/rdrucers'
+import { CommonAction } from '@/store/reducers'
 import { UserInfo } from './types'
 import { USER } from './actionTypes'
 

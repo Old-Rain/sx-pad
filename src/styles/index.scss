@@ -1,5 +1,9 @@
 @import './global.scss';
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -35,7 +39,9 @@ li {
   list-style: none;
 }
 
-button {
+button,
+[type='button'],
+[type='submit'] {
   display: block;
   border: 0;
   padding: 0;

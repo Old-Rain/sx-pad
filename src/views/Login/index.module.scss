@@ -1,7 +1,6 @@
-@import "~@/styles/global.scss";
+@import '~@/styles/global.scss';
 
 @mixin loginBtn {
-  margin: 12px auto 0;
   background: linear-gradient(to bottom, #fdc159, #fa891f);
   border-radius: 100px;
   font-size: 12px;
@@ -37,7 +36,7 @@
       i {
         width: 24px;
         height: 24px;
-        background: url("~@/assets/spirit.png") no-repeat 0 0;
+        background: url('~@/assets/spirit.png') no-repeat 0 0;
         background-size: 100%;
       }
 
@@ -49,7 +48,7 @@
   }
 
   p {
-    margin: 16px auto 0;
+    margin: 8px auto 0;
     width: 180px;
     font-size: 12px;
     text-align: center;
@@ -58,23 +57,93 @@
 
   button {
     @include loginBtn;
+    margin: 6px auto 0;
     width: 130px;
     height: 32px;
   }
 }
 
 .LoginForUser {
+  padding: 24px 24px 0;
+
+  & :global(.ant-row) {
+    position: relative;
+    margin: 0;
+    height: 72px;
+
+    :global(.ant-form-item-label) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: calc(34px - 1px);
+      z-index: 2;
+
+      :global(label) {
+        display: flex;
+        height: 100%;
+
+        i {
+          display: block;
+          width: 24px;
+          height: 24px;
+          background: url('~@/assets/spirit.png') no-repeat;
+          background-size: 100%;
+          &.usernameIcon {
+            background-position: 0 -24px;
+          }
+          &.passwordIcon {
+            background-position: 0 -48px;
+          }
+        }
+      }
+    }
+
+    :global(.ant-form-item-control) {
+      height: 58px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+
+      :global(.ant-form-item-control-input) {
+        height: 34px;
+      }
+
+      :global(.ant-form-item-explain) {
+        padding-left: 32px;
+        height: 24px;
+      }
+    }
+
+    input {
+      padding-left: 32px;
+      background: transparent;
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      box-shadow: none !important;
+    }
+  }
+
   .submit {
     @include loginBtn;
     width: 100%;
     height: 32px;
+  }
+
+  .forgetPwd {
+    margin: 18px auto 0;
+    font-size: 12px;
+    color: $textColorSub2;
   }
 }
 
 .Login {
   width: 100%;
   height: 100%;
-  background: url("~@/assets/Login_bg@2x.jpg") no-repeat center 0;
+  background: url('~@/assets/Login_bg@2x.jpg') no-repeat center 0;
   background-size: cover;
 
   .board {

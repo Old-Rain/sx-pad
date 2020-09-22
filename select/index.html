@@ -23,17 +23,30 @@
         height: 32px;
       }
 
+      .select-label {
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 0 0 0 8px;
+        width: 240px;
+        height: 32px;
+        line-height: 32px;
+        font-size: 12px;
+        pointer-events: none; /* 事件穿透，将鼠标事件穿过当前盒子，落在下面的盒子上 */
+      }
+
       /* 输入框 */
       .select-input {
-        display: block;
         box-sizing: border-box;
-        padding: 0 0 0 8px;
+        display: block;
         width: 100%;
         height: 100%;
         border: 1px solid skyblue;
         outline: none;
         border-radius: 2px;
-        font-size: 12px;
+        font-size: 0;
+        color: transparent;
         transition: box-shadow 0.3s;
       }
 
@@ -97,6 +110,7 @@
   </head>
   <body>
     <div class="select">
+      <div class="select-label"></div>
       <input type="text" class="select-input" readonly />
       <i class="select-arrow"></i>
       <div class="select-options">
@@ -124,9 +138,6 @@
         { label: '朱由检-思宗-崇祯', value: 'zyj-sz-cz' },
       ]
 
-      // 发送到后端的值
-      var selectValue = ''
-
       // 循环添加
       for (let i = 0; i < list.length; i++) {
         $('.select-options ul').append($(`<li data-index="${i}">${list[i].label}</li>`))
@@ -152,11 +163,11 @@
       $('.select-options ul').on('click', 'li', function (e) {
         var item = list[$(this).attr('data-index')]
 
-        $('.select-input').val(item.label)
-        selectValue = item.value
+        $('.select-input').val(item.value)
+        $('.select-label').text(item.label)
 
         console.log($('.select-input').val())
-        console.log(selectValue)
+        console.log($('.select-label').text())
       })
     </script>
   </body>

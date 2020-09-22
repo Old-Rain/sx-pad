@@ -4,9 +4,10 @@ import { RouteComponentProps } from 'react-router-dom'
 
 import QRCode from 'qrcode'
 
+import { Form, Input } from 'antd'
 import FormTab from './components/FormTab'
 import FromTabItem from './components/FromTabItem'
-import { Form, Input } from 'antd'
+import Puzzle, { PuzzleComfirm } from './components/Puzzle'
 
 import logo from '@/assets/logo.png'
 import styles from './index.module.scss'
@@ -88,10 +89,20 @@ const passwordReg = /^.{8,16}$/
 
 const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
   const [form] = Form.useForm<UserForm>()
+  const [puzzleVisible, setPuzzleVisible] = useState<boolean>(false)
+  const puzzleRef = useRef<PuzzleComfirm>(null)
 
   const onFinish = async (values: UserForm) => {
-    console.log(values)
+    // 显示拼图
+    setPuzzleVisible(true)
 
+    // 拼图校验
+    const puzzleRes = await puzzleRef.current!.comfirm().catch(() => {})
+
+    // 取消校验
+    if (!puzzleRes) return setPuzzleVisible(false)
+
+    // 校验通过发送请求
     const { data: res } = await loginAPI<UserInfo>({ username: '', password: '' })
     console.log(res)
     props.history.push('/home')
@@ -139,6 +150,8 @@ const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
         <input type="submit" className={styles.submit} value="登 录" />
         <input type="button" className={styles.forgetPwd} value="忘记密码" />
       </Form>
+
+      <Puzzle ref={puzzleRef} visible={puzzleVisible} />
     </div>
   )
 }
@@ -159,7 +172,7 @@ const Login: FC<LoginProps> = (props: PropsWithChildren<LoginProps>) => {
 
         {/* 登录面板 */}
         <div className={styles.form}>
-          <FormTab defaultActived={0}>
+          <FormTab defaultActived={1}>
             <FromTabItem label="扫码登录">
               <LoginForQRCode {...props} />
             </FromTabItem>

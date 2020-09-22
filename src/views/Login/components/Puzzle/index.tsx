@@ -1,30 +1,39 @@
-import React from 'react'
-import { FC, PropsWithChildren } from 'react'
+import React, { forwardRef, useImperativeHandle } from 'react'
+import { ForwardRefExoticComponent, RefAttributes } from 'react'
 
 import styles from './index.module.scss'
 
-const usePuzzle = () => {
-  let resolve_: (value?: unknown) => void = function () {}
-  let reject_: (reason?: any) => void = function () {}
-  new Promise((resolve, reject) => {
-    resolve_ = resolve
-    reject_ = reject
-  })
-
-  return { resolve_, reject_ }
+interface PuzzleProps {
+  visible: boolean
 }
 
-interface PuzzleProps {}
+export interface PuzzleComfirm {
+  comfirm: () => Promise<any>
+}
 
-const Puzzle: FC<PuzzleProps> = (props: PropsWithChildren<PuzzleProps>) => {
-  // const
+let resolve_: (value?: any) => void = () => {}
+let reject_: (reason?: any) => void = () => {}
+
+const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfirm>> = forwardRef<
+  PuzzleComfirm,
+  PuzzleProps
+>((props, ref) => {
+  useImperativeHandle(ref, () => ({
+    comfirm: () =>
+      new Promise((resolve, reject) => {
+        resolve_ = resolve
+        reject_ = reject
+      }),
+  }))
 
   return (
-    <div className={styles.Puzzle}>
-      <button>确认</button>
-      <button>取消</button>
+    <div className={styles.Puzzle} style={{ display: props.visible ? 'block' : 'none' }}>
+      <div className={styles.wrap}>
+        <button onClick={() => reject_(false)}>取消</button>
+        <button onClick={() => resolve_(true)}>确认</button>
+      </div>
     </div>
   )
-}
+})
 
 export default Puzzle

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BreakComply</title>
+    <script src="./jquery.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: #333;
+      }
+
+      body {
+        padding: 8px;
+      }
+
+      .select {
+        position: relative;
+        width: 240px;
+        height: 32px;
+      }
+
+      /* 输入框 */
+      .select-input {
+        display: block;
+        box-sizing: border-box;
+        padding: 0 0 0 8px;
+        width: 100%;
+        height: 100%;
+        border: 1px solid skyblue;
+        outline: none;
+        border-radius: 2px;
+        font-size: 12px;
+        transition: box-shadow 0.3s;
+      }
+
+      /* 箭头 */
+      .select-arrow {
+        position: absolute;
+        right: 12px;
+        top: 10px;
+        width: 7px;
+        height: 7px;
+        border: 1px solid #ddd;
+        border-top: 0;
+        border-left: 0;
+        transform-origin: 5px 5px;
+        transform: rotate(45deg);
+        transition: transform 0.3s;
+      }
+
+      /* 选项面板 */
+      .select-options {
+        display: none;
+        overflow: auto;
+        margin-top: 8px;
+        max-height: 192px; /* 超过6行 滚动条显示 */
+        background: #fff;
+        border-radius: 2px;
+        box-shadow: 0 4px 12px 3px rgba(100, 100, 100, 0.1);
+      }
+      .select-options:hover::-webkit-scrollbar {
+        display: block;
+      }
+      .select-options::-webkit-scrollbar {
+        display: none;
+        width: 6px;
+        height: 6px;
+        background-color: transparent;
+      }
+      .select-options::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 10px;
+      }
+      .select-options li {
+        padding: 0 8px;
+        line-height: 32px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .select-options li:hover {
+        background: skyblue;
+        color: #fff;
+      }
+
+      /* 输入框得焦 */
+      .select-input:focus {
+        box-shadow: 0 0 2px 2px rgba(0, 155, 200, 0.2);
+      }
+      .select-input:focus + .select-arrow {
+        transform: rotate(225deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="select">
+      <input type="text" class="select-input" readonly />
+      <i class="select-arrow"></i>
+      <div class="select-options">
+        <ul></ul>
+      </div>
+    </div>
+    <script>
+      // 假数据
+      var list = [
+        { label: '朱元璋-太祖-洪武', value: 'zyz-tz-hw' },
+        { label: '朱允炆-惠宗-建文', value: 'zyw-hz-jw' },
+        { label: '朱棣-成祖-永乐', value: 'zd-cz-yl' },
+        { label: '朱高炽-仁宗-洪熙', value: 'zgc-rz-hx' },
+        { label: '朱瞻基-宣宗-宣德', value: 'zzj-xz-xd' },
+        { label: '朱祁镇-英宗-正统、天顺', value: 'zqz-yz-zt&ts' },
+        { label: '朱祁钰-代宗-景泰', value: 'zqy-dz-jt' },
+        { label: '朱见深-宪宗-成化', value: 'zjs-xz-ch' },
+        { label: '朱佑樘-孝宗-弘治', value: 'zyc-xz-hz' },
+        { label: '朱厚照-武宗-正德', value: 'zhz-wz-zd' },
+        { label: '朱厚熜-世宗-嘉靖', value: 'zhc-sz-jj' },
+        { label: '朱载垕-穆宗-隆庆', value: 'zzh-mz-lq' },
+        { label: '朱翊钧-神宗-万历', value: 'zyj-sz-wl' },
+        { label: '朱常洛-光宗-泰昌', value: 'zcl-gz-tc' },
+        { label: '朱由校-熹宗-天启', value: 'zyx-xz-tq' },
+        { label: '朱由检-思宗-崇祯', value: 'zyj-sz-cz' },
+      ]
+
+      // 发送到后端的值
+      var selectValue = ''
+
+      // 循环添加
+      for (let i = 0; i < list.length; i++) {
+        $('.select-options ul').append($(`<li data-index="${i}">${list[i].label}</li>`))
+      }
+
+      // 滑动显示/隐藏选项面板
+      function slideToggleOptions(that) {
+        setTimeout(function () {
+          $(that).siblings('.select-options').stop().slideToggle(300)
+        }, 100)
+      }
+
+      // 输入框得/失焦，滑动显示/隐藏选项面板
+      $('.select-input')
+        .focus(function (e) {
+          slideToggleOptions(this)
+        })
+        .blur(function (e) {
+          slideToggleOptions(this)
+        })
+
+      // 点击选项时显示label，发送到后端的值为value
+      $('.select-options ul').on('click', 'li', function (e) {
+        var item = list[$(this).attr('data-index')]
+
+        $('.select-input').val(item.label)
+        selectValue = item.value
+
+        console.log($('.select-input').val())
+        console.log(selectValue)
+      })
+    </script>
+  </body>
+</html>

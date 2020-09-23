@@ -10,10 +10,51 @@
   .wrap {
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 200px;
+    top: 300px;
+    transform: translateX(-50%);
+    width: 420px;
+    height: 280px;
     background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.1);
+
+    .core {
+      position: relative;
+      margin: 0 auto;
+      width: 360px;
+      height: 200px;
+
+      .bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 360px;
+        height: 200px;
+        z-index: 1;
+      }
+
+      .transit {
+        display: none;
+        width: 48px;
+        height: 48px;
+      }
+
+      canvas {
+        position: absolute;
+        left: 0;
+        top: 56px;
+        width: 48px;
+        height: 48px;
+      }
+
+      .lack {
+        z-index: 2;
+      }
+
+      .fill {
+        background: cyan;
+        z-index: 3;
+      }
+    }
   }
 }

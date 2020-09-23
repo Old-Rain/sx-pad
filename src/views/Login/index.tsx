@@ -110,7 +110,12 @@ const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
 
   return (
     <div className={styles.LoginForUser}>
-      <Form form={form} name="control-hooks" onFinish={onFinish}>
+      <Form
+        form={form}
+        name="control-hooks"
+        onFinish={onFinish}
+        initialValues={{ username: 'ex-lidongyou002', password: '123456789' }}
+      >
         <Form.Item
           name="username"
           colon={false}

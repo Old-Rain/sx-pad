@@ -12,6 +12,8 @@ import Puzzle, { PuzzleComfirm } from './components/Puzzle'
 import logo from '@/assets/logo.png'
 import styles from './index.module.scss'
 
+import { px2vw } from '@/utils/tools'
+
 import { login as loginAPI, loginQRCode } from '@/api/login'
 import { UserInfo } from '@/store/modules/user/types'
 
@@ -45,15 +47,10 @@ const LoginForQRCode: FC<LoginForQRCodeProps> = (props: LoginForQRCodeProps) => 
 
     setQrcodeStatus(1)
 
-    QRCode.toCanvas(
-      qrcodeCanvas.current,
-      `${res.data}${Math.random()}`,
-      { width: (window.innerWidth * 180) / 1366 },
-      function (error) {
-        if (error) console.error(error)
-        console.log('success!')
-      },
-    )
+    QRCode.toCanvas(qrcodeCanvas.current, `${res.data}${Math.random()}`, { width: px2vw(180) }, function (error) {
+      if (error) console.error(error)
+      console.log('success!')
+    })
 
     // 二维码1分钟后过期
     qrcodeTimer.current = setTimeout(() => setQrcodeStatus(0), 60000)

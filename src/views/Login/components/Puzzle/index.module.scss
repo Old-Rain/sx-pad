@@ -1,3 +1,5 @@
+@import '~@/styles/global.scss';
+
 .Puzzle {
   position: fixed;
   left: 0;
@@ -13,10 +15,49 @@
     top: 300px;
     transform: translateX(-50%);
     width: 420px;
-    height: 280px;
+    height: 320px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.1);
+
+    h3.title {
+      position: relative;
+      margin: 0 auto;
+      width: 360px;
+      height: 46px;
+      line-height: 46px;
+      text-align: center;
+      font-size: $fontSizeTitle;
+      font-weight: bold;
+      border-bottom: 1px solid $line;
+
+      button {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 14px;
+        color: $themeColor;
+      }
+    }
+
+    p.tip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      width: 360px;
+      height: 28px;
+      font-size: 14px;
+
+      span {
+        color: $textColorSub2;
+      }
+
+      button {
+        color: $themeColor;
+      }
+    }
 
     .core {
       position: relative;
@@ -31,30 +72,37 @@
         width: 360px;
         height: 200px;
         z-index: 1;
-      }
-
-      .transit {
-        display: none;
-        width: 48px;
-        height: 48px;
+        opacity: 1;
       }
 
       canvas {
         position: absolute;
         left: 0;
-        top: 56px;
-        width: 48px;
-        height: 48px;
+        top: 0;
       }
 
       .lack {
+        width: 360px;
+        height: 200px;
         z-index: 2;
       }
 
       .fill {
-        background: cyan;
+        left: 30px;
+        top: 56px;
+        width: 48px;
+        height: 48px;
         z-index: 3;
       }
     }
+  }
+
+  .transit {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 360px;
+    height: 200px;
   }
 }

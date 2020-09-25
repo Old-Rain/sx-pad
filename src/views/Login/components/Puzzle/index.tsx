@@ -1,14 +1,11 @@
-import React, { forwardRef, useImperativeHandle, useRef, useEffect, useState } from 'react'
+import React, { forwardRef, useImperativeHandle, useRef, useEffect, useState, useLayoutEffect } from 'react'
 import { ForwardRefExoticComponent, RefAttributes } from 'react'
 
 import styles from './index.module.scss'
+import soupImg from '@/assets/soup.png'
+import { soupList } from './soupList'
 
-import { px2vw } from '@/utils/tools'
-
-// 范围内的随机整数
-function rangeInt(min: number, max: number): number {
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
+import { px2vw, rangeInt, domOffset } from '@/utils/tools'
 
 // 拼图样式
 function puzzleStyle(
@@ -18,24 +15,15 @@ function puzzleStyle(
   rightStyle: boolean,
   bottomStyle: boolean,
 ) {
-  ctx.moveTo(offsetLeft, offsetTop)
-  ctx.lineTo(offsetLeft + px2vw(40), offsetTop)
-  ctx.lineTo(offsetLeft + px2vw(40), offsetTop + px2vw(14))
-  ctx.arc(offsetLeft + px2vw(40), offsetTop + px2vw(20), px2vw(6), -Math.PI / 2, Math.PI / 2, rightStyle)
-  ctx.lineTo(offsetLeft + px2vw(40), offsetTop + px2vw(40))
-  ctx.lineTo(offsetLeft + px2vw(26), offsetTop + px2vw(40))
-  ctx.arc(offsetLeft + px2vw(20), offsetTop + px2vw(40), px2vw(6), 0, Math.PI, bottomStyle)
-  ctx.lineTo(offsetLeft, offsetTop + px2vw(40))
+  ctx.lineTo(offsetLeft + 40, offsetTop)
+  ctx.lineTo(offsetLeft + 40, offsetTop + 14)
+  ctx.arc(offsetLeft + 40, offsetTop + 20, 6, -Math.PI / 2, Math.PI / 2, rightStyle)
+  ctx.lineTo(offsetLeft + 40, offsetTop + 40)
+  ctx.lineTo(offsetLeft + 26, offsetTop + 40)
+  ctx.arc(offsetLeft + 20, offsetTop + 40, 6, 0, Math.PI, bottomStyle)
+  ctx.lineTo(offsetLeft, offsetTop + 40)
   ctx.lineTo(offsetLeft, offsetTop)
 }
-
-// 背景图
-const puzzleBgs: string[] = [
-  require('@/assets/img/puzzle_0.jpg'),
-  require('@/assets/img/puzzle_1.jpg'),
-  require('@/assets/img/puzzle_2.jpg'),
-  require('@/assets/img/puzzle_3.jpg'),
-]
 
 // comfirm确认/取消
 let resolve_: (value: boolean) => void = () => {}
@@ -45,19 +33,53 @@ let lackCtx: CanvasRenderingContext2D | null = null
 let fillCtx: CanvasRenderingContext2D | null = null
 
 interface PuzzleProps {
+  /**
+   * 背景图数组
+   */
+  bgList: string[]
+
+  /**
+   * 显示状态
+   */
   visible: boolean
 }
 
+/**
+ * 暴露给父组件的方法
+ */
 export interface PuzzleComfirm {
   comfirm: () => Promise<boolean>
+}
+
+/**
+ * 动画参数
+ */
+interface Animate {
+  display: 'block' | 'none'
+  opacity: number
+  scale: number
 }
 
 const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfirm>> = forwardRef<
   PuzzleComfirm,
   PuzzleProps
 >((props, ref) => {
+  const { bgList, visible } = props
+
+  // 验证状态
+  const [validate, setValidate] = useState<boolean>(false)
+
+  // 动画参数
+  const [animate, setAnimate] = useState<Animate>({ display: 'none', opacity: 0, scale: 0.5 })
+
   // 背景图
   const [bgIndex, setBgIndex] = useState<number>(0)
+
+  // 背景图数量
+  const bgListLength = useRef<number>(bgList.length - 1)
+
+  // 毒鸡汤
+  const [soupIndex, setSoupIndex] = useState<number>(rangeInt(0, soupList.length - 1))
 
   // 缺口距离
   const [lackLeft, setLackLeft] = useState<number>(0)
@@ -74,6 +96,21 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
   // 填充canvas
   const fillRef = useRef<HTMLCanvasElement>(null)
 
+  // 完成
+  const doneRef = useRef<HTMLDivElement>(null)
+
+  // 轨道
+  const trackRef = useRef<HTMLDivElement>(null)
+
+  // 轨道的offsetLeft
+  const [trackOffsetLeft, setTrackOffsetLeft] = useState<number>(0)
+
+  // 滑块
+  const thumbRef = useRef<HTMLDivElement>(null)
+
+  // 滑块激活状态
+  const [sliding, setSliding] = useState<boolean>(false)
+
   // 使用useImperativeHandle将comfirm暴露给父组件
   useImperativeHandle(ref, () => ({
     comfirm: () =>
@@ -84,15 +121,17 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
   }))
 
   // 刷新背景图片
-  function reloadBg() {
-    const index = rangeInt(0, 3)
+  function reload() {
+    const index = rangeInt(0, bgListLength.current)
 
     if (index !== bgIndex) {
-      setBgIndex(index)
+      setBgIndex(() => index)
+      setSoupIndex(() => rangeInt(0, soupList.length - 1))
+      setValidate(false)
       return
     }
 
-    reloadBg()
+    reload()
   }
 
   // 绘制
@@ -110,7 +149,7 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
     lackCtx!.clearRect(0, 0, lackRef.current!.width, lackRef.current!.height)
     lackCtx!.save()
     lackCtx!.beginPath()
-    puzzleStyle(lackCtx!, lackLeft, px2vw(56), rightStyle, bottomStyle) // 拼图轮廓
+    puzzleStyle(lackCtx!, (lackLeft * 1366) / window.innerWidth, 56, rightStyle, bottomStyle) // 拼图轮廓
     fillCtx!.closePath()
     lackCtx!.clip()
     lackCtx!.drawImage(bgRef.current!, 0, 0)
@@ -127,8 +166,53 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
     fillCtx!.closePath()
     fillCtx!.clip()
     await Promise.resolve()
-    fillCtx!.drawImage(transitRef.current!, -lackLeft, -px2vw(56)) // 异步绘制 [存储裁剪拼图的隐藏img] 到 [填充canvas]
+    fillCtx!.drawImage(transitRef.current!, -(lackLeft * 1366) / window.innerWidth, -56) // 异步绘制 [存储裁剪拼图的隐藏img] 到 [填充canvas]
     fillCtx!.stroke()
+  }
+
+  // 隐藏组件在过渡结束后
+  function hide() {
+    !visible && setAnimate({ ...animate, display: 'none' })
+  }
+
+  // 设置滑块和拼图的left
+  function setSlideSize(size: number) {
+    thumbRef.current!.style.left = `${size}px`
+    fillRef.current!.style.left = `${size}px`
+  }
+
+  // 开启滑块和拼图的transition
+  function removeTransition(type: 'left 0.3s' | '') {
+    thumbRef.current!.style.transition = type
+    fillRef.current!.style.transition = type
+  }
+
+  // 滑动开始
+  function slideStart() {
+    setSliding(true)
+  }
+
+  // 滑动中
+  function slideMove(this: Window, ev: TouchEvent) {
+    let left = ev.touches[0].pageX - trackOffsetLeft - px2vw(20)
+    left = left < 0 ? 0 : left > px2vw(320) ? px2vw(320) : left
+    setSlideSize(left)
+  }
+
+  // 滑动结束
+  function slideEnd(this: Window, ev: TouchEvent) {
+    setSliding(false)
+
+    // 偏移量差不多，通过校验
+    if (Math.abs(lackLeft - fillRef.current!.offsetLeft) <= px2vw(3)) {
+      setValidate(true)
+    }
+
+    // 差距过大，滑块和拼图回弹至初始状态
+    else {
+      removeTransition('left 0.3s')
+      setSlideSize(px2vw(30))
+    }
   }
 
   // 初始化完毕生成 缺口 和 填充
@@ -137,54 +221,146 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
     fillCtx = fillRef.current!.getContext('2d')!
 
     lackCtx.fillStyle = 'rgba(0, 0, 0, 0.6)'
-    lackCtx.strokeStyle = 'rgba(255, 255, 255, 0.8)'
+    lackCtx.strokeStyle = 'rgba(255, 255, 255, 0.6)'
     lackCtx.lineWidth = 2
 
-    fillCtx.strokeStyle = 'rgba(255, 255, 255, 0.8)'
+    fillCtx.strokeStyle = 'rgba(255, 255, 255, 0.6)'
     fillCtx.lineWidth = 2
   }, [])
 
-  // 弹窗隐藏时随机更新背景，触发背景图onload
-  useEffect(() => {
-    if (!props.visible) {
-      setBgIndex(rangeInt(0, 3))
+  // 显示/隐藏动画-1
+  useLayoutEffect(() => {
+    // 显示时，先设置display
+    if (visible) {
+      setAnimate((animate) => ({ ...animate, display: 'block' }))
     }
-  }, [props.visible])
+
+    // 隐藏时先设置opacity和scale
+    else {
+      setAnimate((animate) => ({ ...animate, opacity: 0, scale: 0.5 }))
+    }
+  }, [visible])
+
+  // 显示/隐藏动画-2
+  useEffect(() => {
+    if (animate.display === 'block') {
+      // display为block后再更改opacity和scale
+      setAnimate((animate) => ({ ...animate, opacity: 1, scale: 1 }))
+
+      // 设置滑块轨道的左侧偏移量
+      setTrackOffsetLeft(domOffset(trackRef.current!).left)
+    } else {
+      // 隐藏时，将滑块和拼图的left还原
+      setSlideSize(px2vw(30))
+
+      // 组件彻底隐藏后更新背景图
+      reload()
+    }
+
+    // eslint-disable-next-line
+  }, [animate.display])
+
+  // 滑块滑动事件
+  useEffect(() => {
+    // 滑动开始，window创建监听touchend和touchmove
+    if (sliding) {
+      window.addEventListener('touchend', slideEnd)
+      window.addEventListener('touchmove', slideMove)
+    }
+
+    // 滑动结束，window卸载监听touchend和touchmove
+    else {
+      window.removeEventListener('touchend', slideEnd)
+      window.removeEventListener('touchmove', slideMove)
+    }
+
+    return () => {
+      window.removeEventListener('touchend', slideEnd)
+      window.removeEventListener('touchmove', slideMove)
+    }
+
+    // eslint-disable-next-line
+  }, [sliding])
 
   return (
-    <div className={styles.Puzzle} style={{ display: props.visible ? 'block' : 'none' }}>
+    <div
+      className={styles.Puzzle}
+      style={{ display: animate.display, opacity: animate.opacity }}
+      onTransitionEnd={hide}
+    >
       {/* <button onClick={() => resolve_(true)}>确认</button> */}
 
-      <div className={styles.wrap}>
+      {/* 弹窗 */}
+      <div className={styles.wrap} style={{ transform: `scale(${animate.scale})`, opacity: animate.opacity }}>
+        {/* 标题 */}
         <h3 className={styles.title}>
           <button onClick={() => reject_(false)}>返回</button>
           安全验证
         </h3>
 
+        {/* 提示 */}
         <p className={styles.tip}>
-          <span>拖动下方滑块完成拼图</span> <button onClick={reloadBg}>刷新</button>
+          <span>拖动下方滑块完成拼图</span> <button onClick={reload}>刷新</button>
         </p>
 
+        {/* 核心 */}
         <div className={styles.core}>
           {/* 背景图 */}
-          <img className={styles.bg} ref={bgRef} src={puzzleBgs[bgIndex]} alt="" onLoad={draw} />
+          <img className={styles.bg} ref={bgRef} src={bgList[bgIndex]} onLoad={draw} alt="" />
 
           {/* 缺口 */}
-          <canvas className={styles.lack} ref={lackRef} width={px2vw(360)} height={px2vw(200)}></canvas>
+          <canvas
+            className={styles.lack}
+            ref={lackRef}
+            style={{ display: validate ? 'none' : 'block' }}
+            width="360"
+            height="200"
+          ></canvas>
 
           {/* 填充 */}
           <canvas
             className={styles.fill}
             ref={fillRef}
-            width={px2vw(48)}
-            height={px2vw(48)}
-            onClick={() => console.log(lackLeft)}
+            style={{ display: validate ? 'none' : 'block' }}
+            width="48"
+            height="48"
           ></canvas>
+
+          {/* 验证通过 */}
+          <div className={styles.done} ref={doneRef} style={{ display: validate ? 'flex' : 'none' }}>
+            <img src={soupImg} alt="" />
+            <p>{soupList[soupIndex]}</p>
+          </div>
         </div>
+
+        {/* 滑块 */}
+        <div className={styles.slide} style={{ display: validate ? 'none' : 'flex' }}>
+          <div className={styles.track} ref={trackRef}>
+            <div
+              className={styles.thumb}
+              ref={thumbRef}
+              onTouchStart={slideStart}
+              onTransitionEnd={() => removeTransition('')}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        {/* 确认验证 */}
+        {validate ? (
+          <div className={styles.resolve}>
+            <button onClick={() => resolve_(true)}>确 认</button>
+          </div>
+        ) : (
+          ''
+        )}
       </div>
 
       {/* 缺口到填充的中转 */}
-      <img className={styles.transit} ref={transitRef} src={puzzleBgs[3]} alt="" />
+      <img className={styles.transit} ref={transitRef} alt="" />
     </div>
   )
 })

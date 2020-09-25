@@ -6,7 +6,11 @@ import styles from './index.module.scss'
 import { FromTabItemProps } from '../FromTabItem'
 
 interface FormTabProps {
+  /**
+   * 默认选中的页签
+   */
   defaultActived?: number
+
   children: ReactElement<FromTabItemProps>[] // 子属性必须为FromTabItem组件（虽然不用FromTabItemProps也不会报错，但是这样写有提示）
 }
 

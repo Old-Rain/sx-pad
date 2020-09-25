@@ -10,6 +10,7 @@ import FromTabItem from './components/FromTabItem'
 import Puzzle, { PuzzleComfirm } from './components/Puzzle'
 
 import logo from '@/assets/logo.png'
+import { bgList } from './bgList'
 import styles from './index.module.scss'
 
 import { px2vw } from '@/utils/tools'
@@ -43,13 +44,19 @@ const LoginForQRCode: FC<LoginForQRCodeProps> = (props: LoginForQRCodeProps) => 
 
   // 获取二维码并渲染
   async function getQRCode() {
-    const { data: res } = await loginQRCode<string>()
+    const { data: res } = (await loginQRCode<string>()) || { data: null }
+
+    if (!res || res.code !== '00') {
+      setQrcodeStatus(0)
+      return
+    }
 
     setQrcodeStatus(1)
 
     QRCode.toCanvas(qrcodeCanvas.current, `${res.data}${Math.random()}`, { width: px2vw(180) }, function (error) {
-      if (error) console.error(error)
-      console.log('success!')
+      if (error) {
+        console.error(error)
+      }
     })
 
     // 二维码1分钟后过期
@@ -153,7 +160,7 @@ const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
         <input type="button" className={styles.forgetPwd} value="忘记密码" />
       </Form>
 
-      <Puzzle ref={puzzleRef} visible={puzzleVisible} />
+      <Puzzle ref={puzzleRef} visible={puzzleVisible} bgList={bgList} />
     </div>
   )
 }

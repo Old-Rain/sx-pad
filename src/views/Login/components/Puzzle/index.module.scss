@@ -3,23 +3,27 @@
 .Puzzle {
   position: fixed;
   left: 0;
+  right: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s;
   z-index: 9999;
 
+  // 弹窗
   .wrap {
-    position: absolute;
-    left: 50%;
-    top: 300px;
-    transform: translateX(-50%);
+    margin: 300px auto 0;
     width: 420px;
-    height: 320px;
+    height: 340px;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 4px;
     box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.1);
+    transform-origin: center center;
+    transform: scale(0.5);
+    transition: opacity 0.3s, transform 0.3s;
 
+    // 标题
     h3.title {
       position: relative;
       margin: 0 auto;
@@ -41,6 +45,7 @@
       }
     }
 
+    // 提示
     p.tip {
       display: flex;
       justify-content: space-between;
@@ -59,11 +64,14 @@
       }
     }
 
+    // 核心
     .core {
+      overflow: hidden;
       position: relative;
       margin: 0 auto;
       width: 360px;
       height: 200px;
+      border-radius: 4px;
 
       .bg {
         position: absolute;
@@ -94,9 +102,94 @@
         height: 48px;
         z-index: 3;
       }
+
+      .done {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 360px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.8);
+        z-index: 4;
+
+        img {
+          margin-bottom: 12px;
+          height: 120px;
+        }
+
+        p {
+          padding: 0 30px;
+          color: $themeColor;
+          font-size: 14px;
+        }
+      }
+    }
+
+    // 滑块
+    .slide {
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      width: 360px;
+      height: 60px;
+
+      .track {
+        position: relative;
+        width: 100%;
+        height: 16px;
+        background: #e4e4e4;
+        border-radius: 4px;
+
+        .thumb {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          left: 30px;
+          top: 50%;
+          transform: translate(-5px, -50%);
+          width: 50px;
+          height: 24px;
+          background: $themeColor;
+          border-radius: 4px;
+
+          span {
+            margin: 0 4px;
+            width: 1px;
+            height: 12px;
+            background: #dfe2ff;
+            border-radius: 1px;
+          }
+        }
+      }
+    }
+
+    // 确认验证
+    .resolve {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 360px;
+      height: 60px;
+      background: #fff;
+
+      button {
+        padding: 0 24px;
+        height: 32px;
+        background: $themeColor;
+        font-size: 14px;
+        color: #fff;
+        border-radius: 4px;
+      }
     }
   }
 
+  // 切片存放处
   .transit {
     position: fixed;
     left: 0;

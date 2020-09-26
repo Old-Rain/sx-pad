@@ -327,8 +327,6 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
       style={{ display: animate.display, opacity: animate.opacity }}
       onTransitionEnd={hide}
     >
-      {/* <button onClick={() => resolve_(true)}>确认</button> */}
-
       {/* 弹窗 */}
       <div className={styles.wrap} style={{ transform: `scale(${animate.scale})`, opacity: animate.opacity }}>
         {/* 标题 */}

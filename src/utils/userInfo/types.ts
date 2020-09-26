@@ -1,3 +1,6 @@
+/**
+ * 用户信息
+ */
 export interface UserInfo {
   userName?: string
   userId?: string

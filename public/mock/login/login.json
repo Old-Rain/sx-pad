@@ -2,6 +2,7 @@
   "code": "00",
   "message": "成功",
   "data": {
+    "userName": "李东游",
     "userId": "ex-lidongyou002",
     "rankCode": "t6",
     "rankDesc": "中级前端开发工程师",

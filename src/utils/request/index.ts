@@ -1,5 +1,5 @@
 import axios from 'axios'
-import store from '@/store'
+import { getToken } from '@/utils/userInfo'
 
 const API = axios.create({
   timeout: 20000,
@@ -8,11 +8,9 @@ const API = axios.create({
 // 请求拦截
 API.interceptors.request.use(
   (value) => {
-    const token = store.getState().userModule.userInfo.token
+    const token = getToken()
 
-    if (token) {
-      value.headers.Authorization = token
-    }
+    token && (value.headers.Authorization = token)
 
     return value
   },

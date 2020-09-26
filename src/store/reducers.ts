@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import { ReducersMapObject } from 'redux'
 
-import userModule, { UserState } from './modules/user'
+import authModule, { AuthState } from './modules/auth'
 
 interface Modules {
-  userModule: UserState
+  authModule: AuthState
 }
 
 export interface CommonAction {
@@ -13,7 +13,7 @@ export interface CommonAction {
 }
 
 const reducersMap: ReducersMapObject<Modules, CommonAction> = {
-  userModule,
+  authModule,
 }
 
 export default combineReducers(reducersMap)

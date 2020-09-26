@@ -2,9 +2,15 @@ import React, { useEffect, useRef, useState } from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { RouteComponentProps } from 'react-router-dom'
 
-import QRCode from 'qrcode'
+import { px2vw } from '@/utils/tools'
+import { saveUserInfo } from '@/utils/userInfo'
+import { UserInfo } from '@/utils/userInfo/types'
 
-import { Form, Input } from 'antd'
+import { login, loginQRCode } from '@/api/login'
+
+import QRCode from 'qrcode'
+import { message, Form, Input } from 'antd'
+import { RuleObject } from 'antd/lib/form'
 import FormTab from './components/FormTab'
 import FromTabItem from './components/FromTabItem'
 import Puzzle, { PuzzleComfirm } from './components/Puzzle'
@@ -12,11 +18,6 @@ import Puzzle, { PuzzleComfirm } from './components/Puzzle'
 import logo from '@/assets/logo.png'
 import { bgList } from './bgList'
 import styles from './index.module.scss'
-
-import { px2vw } from '@/utils/tools'
-
-import { login as loginAPI, loginQRCode } from '@/api/login'
-import { UserInfo } from '@/store/modules/user/types'
 
 /**
  * 扫码登录
@@ -88,8 +89,31 @@ interface UserForm {
   password: string
 }
 
+// 用户名校验
 const usernameReg = /^(ex-|EX-)?([a-z]|[A-Z])+[0-9]{3}$/
+const usernameRules = [
+  {
+    validator: function (rule: RuleObject, value: any) {
+      if (usernameReg.test(value)) {
+        return Promise.resolve()
+      }
+      return Promise.reject('请输入符合规则的UM用户名')
+    },
+  },
+]
+
+// 密码校验
 const passwordReg = /^.{8,16}$/
+const passwordRules = [
+  {
+    validator: function (rule: RuleObject, value: any) {
+      if (passwordReg.test(value)) {
+        return Promise.resolve()
+      }
+      return Promise.reject('请输入8~6位密码')
+    },
+  },
+]
 
 const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
   const [form] = Form.useForm<UserForm>()
@@ -107,8 +131,20 @@ const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
     if (!puzzleRes) return setPuzzleVisible(false)
 
     // 校验通过发送请求
-    const { data: res } = (await loginAPI<UserInfo>({ username: '', password: '' })) || { data: null }
+    const { data: res } = (await login<UserInfo>(values)) || { data: null }
     console.log(res)
+
+    // 请求失败
+    if (!res || res.code !== '00') {
+      message.error(res?.message || '未知错误')
+      setPuzzleVisible(false)
+
+      return
+    }
+
+    // 请求成功
+    saveUserInfo(res.data)
+
     props.history.push('/home')
   }
 
@@ -125,16 +161,7 @@ const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
           colon={false}
           validateTrigger="onBlur"
           label={<i className={styles.usernameIcon}></i>}
-          rules={[
-            {
-              validator: function (rule, value) {
-                if (usernameReg.test(value)) {
-                  return Promise.resolve()
-                }
-                return Promise.reject('请输入符合规则的UM用户名')
-              },
-            },
-          ]}
+          rules={usernameRules}
         >
           <Input placeholder="请输入UM用户名" />
         </Form.Item>
@@ -143,16 +170,7 @@ const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
           colon={false}
           validateTrigger="onBlur"
           label={<i className={styles.passwordIcon}></i>}
-          rules={[
-            {
-              validator: function (rule, value) {
-                if (passwordReg.test(value)) {
-                  return Promise.resolve()
-                }
-                return Promise.reject('请输入8~6位密码')
-              },
-            },
-          ]}
+          rules={passwordRules}
         >
           <Input placeholder="请输入密码" type="password" />
         </Form.Item>

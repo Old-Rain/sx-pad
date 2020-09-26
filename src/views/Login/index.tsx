@@ -107,7 +107,7 @@ const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
     if (!puzzleRes) return setPuzzleVisible(false)
 
     // 校验通过发送请求
-    const { data: res } = await loginAPI<UserInfo>({ username: '', password: '' })
+    const { data: res } = (await loginAPI<UserInfo>({ username: '', password: '' })) || { data: null }
     console.log(res)
     props.history.push('/home')
   }

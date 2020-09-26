@@ -5,7 +5,7 @@ import styles from './index.module.scss'
 import soupImg from '@/assets/soup.png'
 import { soupList } from './soupList'
 
-import { px2vw, rangeInt, domOffset } from '@/utils/tools'
+import { isMobile, px2vw, domOffset, rangeInt } from '@/utils/tools'
 
 // 拼图样式
 function puzzleStyle(
@@ -106,6 +106,7 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
   const [trackOffsetLeft, setTrackOffsetLeft] = useState<number>(0)
 
   // 滑块
+  // eslint-disable-next-line/
   const thumbRef = useRef<HTMLDivElement>(null)
 
   // 滑块激活状态
@@ -188,19 +189,28 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
   }
 
   // 滑动开始
-  function slideStart() {
+  function slideStart(this: HTMLDivElement, ev: TouchEvent | MouseEvent) {
     setSliding(true)
   }
 
   // 滑动中
-  function slideMove(this: Window, ev: TouchEvent) {
-    let left = ev.touches[0].pageX - trackOffsetLeft - px2vw(20)
+  function slideMove(this: Window, ev: TouchEvent | MouseEvent) {
+    let left = 0
+
+    if (isMobile()) {
+      left = (ev as TouchEvent).touches[0].pageX - trackOffsetLeft - px2vw(20)
+    } else {
+      ;(ev as MouseEvent).preventDefault()
+      left = (ev as MouseEvent).pageX - trackOffsetLeft - px2vw(20)
+    }
+
     left = left < 0 ? 0 : left > px2vw(320) ? px2vw(320) : left
+
     setSlideSize(left)
   }
 
   // 滑动结束
-  function slideEnd(this: Window, ev: TouchEvent) {
+  function slideEnd(this: Window, ev: TouchEvent | MouseEvent) {
     setSliding(false)
 
     // 偏移量差不多，通过校验
@@ -215,8 +225,9 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
     }
   }
 
-  // 初始化完毕生成 缺口 和 填充
+  // 初始化
   useEffect(() => {
+    // 生成 缺口 和 填充
     lackCtx = lackRef.current!.getContext('2d')!
     fillCtx = fillRef.current!.getContext('2d')!
 
@@ -226,6 +237,19 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
 
     fillCtx.strokeStyle = 'rgba(255, 255, 255, 0.6)'
     fillCtx.lineWidth = 2
+
+    // 滑块监听事件
+    const thumbRefCurrent = thumbRef.current!
+    if (isMobile()) {
+      thumbRefCurrent.addEventListener('touchstart', slideStart)
+    } else {
+      thumbRefCurrent.addEventListener('mousedown', slideStart)
+    }
+
+    return () => {
+      thumbRefCurrent.removeEventListener('touchstart', slideStart)
+      thumbRefCurrent.removeEventListener('mousedown', slideStart)
+    }
   }, [])
 
   // 显示/隐藏动画-1
@@ -262,21 +286,34 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
 
   // 滑块滑动事件
   useEffect(() => {
-    // 滑动开始，window创建监听touchend和touchmove
+    // 滑动开始
     if (sliding) {
-      window.addEventListener('touchend', slideEnd)
-      window.addEventListener('touchmove', slideMove)
+      // 移动端，window创建监听touchend和touchmove
+      if (isMobile()) {
+        window.addEventListener('touchmove', slideMove)
+        window.addEventListener('touchend', slideEnd)
+      }
+
+      // PC端，window创建监听mouseup和mousemove
+      else {
+        window.addEventListener('mousemove', slideMove)
+        window.addEventListener('mouseup', slideEnd)
+      }
     }
 
-    // 滑动结束，window卸载监听touchend和touchmove
+    // 滑动结束，window卸载监听
     else {
-      window.removeEventListener('touchend', slideEnd)
       window.removeEventListener('touchmove', slideMove)
+      window.removeEventListener('touchend', slideEnd)
+      window.removeEventListener('mousemove', slideMove)
+      window.removeEventListener('mouseup', slideEnd)
     }
 
     return () => {
-      window.removeEventListener('touchend', slideEnd)
       window.removeEventListener('touchmove', slideMove)
+      window.removeEventListener('touchend', slideEnd)
+      window.removeEventListener('mousemove', slideMove)
+      window.removeEventListener('mouseup', slideEnd)
     }
 
     // eslint-disable-next-line
@@ -336,12 +373,7 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
         {/* 滑块 */}
         <div className={styles.slide} style={{ display: validate ? 'none' : 'flex' }}>
           <div className={styles.track} ref={trackRef}>
-            <div
-              className={styles.thumb}
-              ref={thumbRef}
-              onTouchStart={slideStart}
-              onTransitionEnd={() => removeTransition('')}
-            >
+            <div className={styles.thumb} ref={thumbRef} onTransitionEnd={() => removeTransition('')}>
               <span></span>
               <span></span>
               <span></span>

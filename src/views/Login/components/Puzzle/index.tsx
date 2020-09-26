@@ -29,6 +29,7 @@ function puzzleStyle(
 let resolve_: (value: boolean) => void = () => {}
 let reject_: (reason: boolean) => void = () => {}
 
+// 缺口canvas和填充canvas的画布
 let lackCtx: CanvasRenderingContext2D | null = null
 let fillCtx: CanvasRenderingContext2D | null = null
 

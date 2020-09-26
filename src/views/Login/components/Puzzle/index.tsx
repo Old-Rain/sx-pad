@@ -204,6 +204,7 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
       left = (ev as MouseEvent).pageX - trackOffsetLeft - px2vw(20)
     }
 
+    // 限制滑动的左右距离
     left = left < 0 ? 0 : left > px2vw(320) ? px2vw(320) : left
 
     setSlideSize(left)

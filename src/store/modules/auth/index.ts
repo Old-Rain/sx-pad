@@ -32,12 +32,14 @@ const userModule: Reducer<AuthState, CommonAction> = (state = authState, action)
   switch (type) {
     // 更新菜单
     case AUTH.UPDATE_MENU:
-      newState.menu = { ...authState.menu, ...value }
+      console.log(action)
+
+      newState.menu = [...authState.menu, ...(value || [])]
       return newState
 
     // 更新路由
     case AUTH.UPDATE_ROUTES:
-      newState.routes = { ...authState.routes, ...value }
+      newState.routes = [...authState.routes, ...value]
       return newState
 
     default:

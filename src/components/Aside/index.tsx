@@ -1,50 +1,56 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { FC, PropsWithChildren } from 'react'
+import { withRouter } from 'react-router-dom'
+import { RouteComponentProps } from 'react-router-dom'
+import { Unsubscribe } from 'redux'
+import store from '@/store'
 
 import { Menu } from 'antd'
+import { MenuInfo } from 'rc-menu/es/interface'
 
 import styles from './index.module.scss'
 
 const { SubMenu } = Menu
 
-interface AsideProps {}
+interface AsideProps extends RouteComponentProps {}
 
 const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
+  // 菜单列表
+  const [menu, setmenu] = useState(store.getState().authModule.menu)
+
+  // 卸载redux监听
+  const unsubscribe = useRef<Unsubscribe>()
+
+  // to
+  function to({ key }: MenuInfo) {
+    props.history.push(key as string)
+  }
+
+  useEffect(() => {
+    unsubscribe.current = store.subscribe(() => setmenu(store.getState().authModule.menu))
+
+    return () => {
+      unsubscribe.current!()
+    }
+  })
+
   return (
     <div className={styles.Aside}>
-      <Menu defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} mode="inline" theme="dark">
-        {/* <Menu.Item key="1" icon={1}>
-          Option 1
-        </Menu.Item>
-        <Menu.Item key="2" icon={2}>
-          Option 2
-        </Menu.Item>
-        <Menu.Item key="3" icon={3}>
-          Option 3
-        </Menu.Item> */}
-        {/* <SubMenu key="sub1" icon={4} title="Navigation One">
-          <Menu.Item key="5">Option 9</Menu.Item>
-          <Menu.Item key="6">Option 10</Menu.Item>
-          <SubMenu key="sub4" title="Submenu">
-            <Menu.Item key="7">Option 11</Menu.Item>
-            <Menu.Item key="8">Option 12</Menu.Item>
-          </SubMenu>
-        </SubMenu> */}
-        <SubMenu key="sub2" icon={5} title="Navigation Two">
-          <Menu.Item key="9">Option 9</Menu.Item>
-          <Menu.Item key="10">Option 10</Menu.Item>
-          <SubMenu key="sub3" title="Submenu">
-            <Menu.Item key="11">Option 11</Menu.Item>
-            <Menu.Item key="12">Option 12</Menu.Item>
-          </SubMenu>
-        </SubMenu>
-        <SubMenu key="sub5" icon={9} title="Navigation Two">
-          <Menu.Item key="100">Option 9</Menu.Item>
-          <Menu.Item key="10000">Option 10</Menu.Item>
-        </SubMenu>
+      <Menu defaultSelectedKeys={['1']} mode="inline" theme="dark" onClick={to}>
+        {menu.map((item, index) => {
+          return !item.children ? (
+            <Menu.Item key={item.path}>{item.name}</Menu.Item>
+          ) : (
+            <SubMenu key={`sub${index}`} title={item.name}>
+              {item.children!.map((item1, index1) => {
+                return <Menu.Item key={item1.path}>{item1.name}</Menu.Item>
+              })}
+            </SubMenu>
+          )
+        })}
       </Menu>
     </div>
   )
 }
 
-export default Aside
+export default withRouter(Aside)

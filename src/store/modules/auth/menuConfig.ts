@@ -1,4 +1,8 @@
-export const menuConfig = {
+import { Menu } from './types'
+
+export const menuConfig: {
+  [propName: string]: Menu[]
+} = {
   auth0: [
     {
       name: '首页',

@@ -4,7 +4,7 @@
 export interface UserInfo {
   userName?: string
   userId?: string
-  rankCode?: string
+  rankCode?: number
   rankDesc?: string
   deptCode?: string
   deptDesc?: string

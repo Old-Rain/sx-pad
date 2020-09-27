@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { RouteComponentProps } from 'react-router-dom'
+import store from '@/store'
+import { AUTH } from '@/store/modules/auth/actionTypes'
 
 import QRCode from 'qrcode'
 import { px2vw } from '@/utils/tools'
@@ -141,8 +143,11 @@ const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
       return
     }
 
-    // 请求成功
+    // 保存用户信息
     saveUserInfo(res.data)
+
+    // 更新权限
+    store.dispatch({ type: AUTH.AUTH_UPDATE })
 
     props.history.push('/home')
   }
@@ -177,7 +182,7 @@ const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
         <input type="button" className={styles.forgetPwd} value="忘记密码" />
       </Form>
 
-      <Puzzle ref={puzzleRef} visible={puzzleVisible} bgList={bgList} />
+      <Puzzle ref={puzzleRef} visible={puzzleVisible} bgList={bgList} enableSoup />
     </div>
   )
 }

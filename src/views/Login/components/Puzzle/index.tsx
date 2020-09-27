@@ -35,14 +35,19 @@ let fillCtx: CanvasRenderingContext2D | null = null
 
 interface PuzzleProps {
   /**
+   * 显示状态
+   */
+  visible: boolean
+
+  /**
    * 背景图数组
    */
   bgList: string[]
 
   /**
-   * 显示状态
+   * 是否开启毒鸡汤
    */
-  visible: boolean
+  enableSoup?: boolean
 }
 
 /**
@@ -65,7 +70,7 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
   PuzzleComfirm,
   PuzzleProps
 >((props, ref) => {
-  const { bgList, visible } = props
+  const { bgList, visible, enableSoup } = props
 
   // 验证状态
   const [validate, setValidate] = useState<boolean>(false)
@@ -217,7 +222,11 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
 
     // 偏移量差不多，通过校验
     if (Math.abs(lackLeft - fillRef.current!.offsetLeft) <= px2vw(3)) {
-      setValidate(true)
+      if (enableSoup) {
+        setValidate(true)
+      } else {
+        resolve_(true)
+      }
     }
 
     // 差距过大，滑块和拼图回弹至初始状态

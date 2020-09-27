@@ -13,13 +13,16 @@ import styles from './index.module.scss'
 
 const { SubMenu } = Menu
 
-store.dispatch({ type: AUTH.AUTH_UPDATE, value: true })
+// 获取菜单
+function getMenu() {
+  return store.getState().authModule.menu
+}
 
 interface AsideProps extends RouteComponentProps {}
 
 const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
   // 菜单列表
-  const [menu, setMenu] = useState(store.getState().authModule.menu)
+  const [menu, setMenu] = useState(getMenu())
 
   // 卸载redux监听
   const unsubscribe = useRef<Unsubscribe>()
@@ -31,12 +34,18 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
 
   useEffect(() => {
     unsubscribe.current = store.subscribe(() => {
-      setMenu(store.getState().authModule.menu)
+      setMenu(getMenu())
     })
+
+    if (!menu.length) {
+      store.dispatch({ type: AUTH.AUTH_UPDATE, value: true })
+    }
 
     return () => {
       unsubscribe.current!()
     }
+
+    // eslint-disable-next-line
   }, [])
 
   return (

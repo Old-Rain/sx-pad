@@ -1,12 +1,13 @@
 import React, { Suspense } from 'react'
-import { BrowserRouter as Router, Switch, Redirect, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom'
 
 import { getToken } from '@/utils/userInfo'
 
-import Login from './views/Login'
+import Aside from './components/Aside'
 import Header from './components/Header'
-
 import styles from './App.module.scss'
+
+import Login from './views/Login'
 
 function App() {
   return (
@@ -21,9 +22,7 @@ function App() {
                 <Header />
                 <div className={styles.AppBody}>
                   <aside>
-                    <Link to="/home">home</Link>
-                    <br />
-                    <Link to="/hdgl">hdgl</Link>
+                    <Aside />
                   </aside>
                   <article>
                     <Route path="/" exact render={() => <Redirect to={getToken() ? '/home' : '/login'} />} />

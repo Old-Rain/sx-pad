@@ -5,24 +5,24 @@
 import { Reducer } from 'redux'
 
 import { CommonAction } from '@/store/reducers'
-import { Menu, Routes } from './types'
+import { Menu, Route } from './types'
 import { AUTH } from './actionTypes'
 
 export interface AuthState {
   /**
    * 菜单
    */
-  menu: Menu
+  menu: Menu[]
 
   /**
    * 路由
    */
-  routes: Routes
+  routes: Route[]
 }
 
 const authState: AuthState = {
-  menu: {},
-  routes: {},
+  menu: [],
+  routes: [],
 }
 
 const userModule: Reducer<AuthState, CommonAction> = (state = authState, action) => {

@@ -2,13 +2,13 @@ import React, { useEffect, useRef, useState } from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { RouteComponentProps } from 'react-router-dom'
 
+import QRCode from 'qrcode'
 import { px2vw } from '@/utils/tools'
 import { saveUserInfo } from '@/utils/userInfo'
 import { UserInfo } from '@/utils/userInfo/types'
 
 import { login, loginQRCode } from '@/api/login'
 
-import QRCode from 'qrcode'
 import { message, Form, Input } from 'antd'
 import { RuleObject } from 'antd/lib/form'
 import FormTab from './components/FormTab'
@@ -132,7 +132,6 @@ const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
 
     // 校验通过发送请求
     const { data: res } = (await login<UserInfo>(values)) || { data: null }
-    console.log(res)
 
     // 请求失败
     if (!res || res.code !== '00') {

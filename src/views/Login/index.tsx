@@ -147,7 +147,7 @@ const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
     saveUserInfo(res.data)
 
     // 更新权限
-    store.dispatch({ type: AUTH.AUTH_UPDATE })
+    store.dispatch({ type: AUTH.AUTH_UPDATE, value: true })
 
     props.history.push('/home')
   }

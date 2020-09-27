@@ -32,8 +32,6 @@ const userModule: Reducer<AuthState, CommonAction> = (state = authState, action)
   switch (type) {
     // 更新菜单
     case AUTH.UPDATE_MENU:
-      console.log(action)
-
       newState.menu = [...authState.menu, ...(value || [])]
       return newState
 

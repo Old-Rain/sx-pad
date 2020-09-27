@@ -7,9 +7,9 @@ interface Modules {
   authModule: AuthState
 }
 
-export interface CommonAction {
+export interface CommonAction<T = any> {
   type: string
-  value?: any
+  value?: T
 }
 
 const reducersMap: ReducersMapObject<Modules, CommonAction> = {

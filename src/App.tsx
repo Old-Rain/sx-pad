@@ -27,7 +27,8 @@ function App() {
                   <article>
                     <Route path="/" exact render={() => <Redirect to={getToken() ? '/home' : '/login'} />} />
                     <Route path="/home" component={() => <div>home</div>} />
-                    <Route path="/hdgl" component={() => <div>hdgl</div>} />
+                    <Route path="/interactiveTrack" component={() => <div>interactiveTrack</div>} />
+                    <Route path="/smartManageBoard" component={() => <div>smartManageBoard</div>} />
                   </article>
                 </div>
               </div>

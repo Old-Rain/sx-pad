@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { RouteComponentProps } from 'react-router-dom'
 import { Unsubscribe } from 'redux'
 import store from '@/store'
+import { AUTH } from '@/store/modules/auth/actionTypes'
 
 import { Menu } from 'antd'
 import { MenuInfo } from 'rc-menu/es/interface'
@@ -12,11 +13,13 @@ import styles from './index.module.scss'
 
 const { SubMenu } = Menu
 
+store.dispatch({ type: AUTH.AUTH_UPDATE, value: true })
+
 interface AsideProps extends RouteComponentProps {}
 
 const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
   // 菜单列表
-  const [menu, setmenu] = useState(store.getState().authModule.menu)
+  const [menu, setMenu] = useState(store.getState().authModule.menu)
 
   // 卸载redux监听
   const unsubscribe = useRef<Unsubscribe>()
@@ -27,12 +30,14 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
   }
 
   useEffect(() => {
-    unsubscribe.current = store.subscribe(() => setmenu(store.getState().authModule.menu))
+    unsubscribe.current = store.subscribe(() => {
+      setMenu(store.getState().authModule.menu)
+    })
 
     return () => {
       unsubscribe.current!()
     }
-  })
+  }, [])
 
   return (
     <div className={styles.Aside}>

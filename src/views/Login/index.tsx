@@ -56,7 +56,7 @@ const LoginForQRCode: FC<LoginForQRCodeProps> = (props: LoginForQRCodeProps) => 
 
     setQrcodeStatus(1)
 
-    QRCode.toCanvas(qrcodeCanvas.current, `${res.data}`, { margin: 1, width: px2vw(180) }, function (
+    QRCode.toCanvas(qrcodeCanvas.current, `${res.data}${Math.random()}`, { margin: 1, width: px2vw(180) }, function (
       error,
     ) {
       if (error) {

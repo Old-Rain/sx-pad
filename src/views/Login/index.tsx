@@ -56,7 +56,9 @@ const LoginForQRCode: FC<LoginForQRCodeProps> = (props: LoginForQRCodeProps) => 
 
     setQrcodeStatus(1)
 
-    QRCode.toCanvas(qrcodeCanvas.current, `${res.data}${Math.random()}`, { width: px2vw(180) }, function (error) {
+    QRCode.toCanvas(qrcodeCanvas.current, `${res.data}`, { margin: 1, width: px2vw(180) }, function (
+      error,
+    ) {
       if (error) {
         console.error(error)
       }
@@ -203,7 +205,7 @@ const Login: FC<LoginProps> = (props: PropsWithChildren<LoginProps>) => {
 
         {/* 登录面板 */}
         <div className={styles.form}>
-          <FormTab defaultActived={1}>
+          <FormTab defaultActived={0}>
             <FromTabItem label="扫码登录">
               <LoginForQRCode {...props} />
             </FromTabItem>

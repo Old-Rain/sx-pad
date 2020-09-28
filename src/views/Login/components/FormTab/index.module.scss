@@ -34,7 +34,7 @@
       }
 
       &.active span {
-        color: $themeColor;
+        color: $highLight;
         &::after {
           content: "";
           position: absolute;
@@ -42,7 +42,7 @@
           bottom: 0;
           width: 100%;
           height: 3px;
-          background: $themeColor;
+          background: $highLight;
         }
       }
     }

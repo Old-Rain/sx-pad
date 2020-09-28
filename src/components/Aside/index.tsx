@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useMemo } from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { withRouter } from 'react-router-dom'
 import { RouteComponentProps } from 'react-router-dom'
@@ -11,8 +11,6 @@ import { MenuInfo } from 'rc-menu/es/interface'
 
 import styles from './index.module.scss'
 
-const { SubMenu } = Menu
-
 // 获取菜单
 function getMenu() {
   return store.getState().authModule.menu
@@ -21,6 +19,12 @@ function getMenu() {
 interface AsideProps extends RouteComponentProps {}
 
 const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
+  // 默认展开 组件有bug
+
+  // 默认选中
+  // eslint-disable-next-line
+  const defaultKeys = useMemo(() => [`/${props.location.pathname.split('/')[1]}`], [])
+
   // 菜单列表
   const [menu, setMenu] = useState(getMenu())
 
@@ -50,16 +54,29 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
 
   return (
     <div className={styles.Aside}>
-      <Menu defaultSelectedKeys={['1']} mode="inline" theme="dark" onClick={to}>
+      <Menu
+        mode="inline"
+        theme="dark"
+        style={{ background: 'transparent' }}
+        defaultSelectedKeys={defaultKeys}
+        onClick={to}
+      >
         {menu.map((item, index) => {
           return !item.children ? (
-            <Menu.Item key={item.path}>{item.name}</Menu.Item>
+            <Menu.Item key={item.path} icon={<i className={[styles.menuIcon, styles[item.icon!]].join(' ')}></i>}>
+              {item.name}
+            </Menu.Item>
           ) : (
-            <SubMenu key={`sub${index}`} title={item.name}>
+            <Menu.SubMenu
+              key={`sub${index}`}
+              icon={<i className={[styles.menuIcon, styles[item.icon!]].join(' ')}></i>}
+              title={item.name}
+              popupClassName={styles.subMenu}
+            >
               {item.children!.map((item1, index1) => {
                 return <Menu.Item key={item1.path}>{item1.name}</Menu.Item>
               })}
-            </SubMenu>
+            </Menu.SubMenu>
           )
         })}
       </Menu>

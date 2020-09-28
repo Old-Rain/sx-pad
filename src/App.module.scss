@@ -7,9 +7,9 @@
     display: flex;
     height: calc(100% - 48px);
 
-    aside {
+    aside.ignore {
       width: 166px;
-      background: $themeColor;
+      background: #494d75;
       overflow: scroll;
     }
 

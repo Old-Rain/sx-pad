@@ -21,12 +21,14 @@ function App() {
               <div className={styles.App}>
                 <Header />
                 <div className={styles.AppBody}>
-                  <aside>
+                  <aside className={styles.ignore}>
                     <Aside />
                   </aside>
                   <article>
                     <Route path="/" exact render={() => <Redirect to={getToken() ? '/home' : '/login'} />} />
                     <Route path="/home" component={() => <div>home</div>} />
+                    <Route path="/meeting" component={() => <div>meeting</div>} />
+                    <Route path="/missionCenter" component={() => <div>missionCenter</div>} />
                     <Route path="/interactiveTrack" component={() => <div>interactiveTrack</div>} />
                     <Route path="/smartManageBoard" component={() => <div>smartManageBoard</div>} />
                   </article>

@@ -1,3 +1,88 @@
+@import '~@/styles/global.scss';
+
 .Aside {
-  
+  .menuIcon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('~@/assets/menu_icon_1.png') no-repeat;
+    background-size: 100%;
+
+    &.home {
+      background-position: 0 0;
+    }
+    &.session {
+      background-position: 0 -16px;
+    }
+    &.action {
+      background-position: 0 -32px;
+    }
+  }
+
+  // 每一行
+  & :global(.ant-menu-item),
+  & :global(.ant-menu-submenu-title) {
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    .menuIcon {
+      margin-right: 8px;
+    }
+  }
+
+  // 有子菜单项的子菜单
+  & :global(li .ant-menu.ant-menu-sub.ant-menu-inline) {
+    background: #32344d;
+  }
+
+  // 折叠/展开箭头
+  & :global(.ant-menu-submenu-arrow) {
+    opacity: 1 !important;
+
+    &::before,
+    &::after {
+      background: rgba(255, 255, 255, 0.65) !important;
+    }
+  }
+
+  // 有子菜单的标题
+  & :global(.ant-menu-dark .ant-menu-submenu-title),
+  & :global(.ant-menu-dark .ant-menu-submenu-title:hover) {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  // 一级菜单高亮
+  & :global(.ant-menu-item.ant-menu-item-selected),
+  & :global(.ant-menu-submenu.ant-menu-submenu-inline.ant-menu-submenu-selected .ant-menu-submenu-title) {
+    position: relative;
+    background: rgba(255, 255, 255, 0.3) !important;
+    color: $highLight;
+
+    .menuIcon {
+      background-image: url('~@/assets/menu_icon_2.png');
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: $highLight;
+    }
+  }
+
+  // 二级菜单高亮
+  &
+    :global(.ant-menu-submenu-title
+      + ul
+      .ant-menu-item.ant-menu-item-only-child.ant-menu-item-active.ant-menu-item-selected),
+  & :global(.ant-menu-submenu-title + ul .ant-menu-item.ant-menu-item-only-child.ant-menu-item-selected) {
+    background: rgba(255, 255, 255, 0) !important;
+
+    &::before {
+      width: 0;
+    }
+  }
 }

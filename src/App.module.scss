@@ -10,13 +10,13 @@
     aside.ignore {
       width: 166px;
       background: #494d75;
-      overflow: scroll;
+      overflow: auto;
     }
 
     article {
       flex: 1;
       background: #f5f5fb;
-      overflow: scroll;
+      overflow: auto;
     }
   }
 }

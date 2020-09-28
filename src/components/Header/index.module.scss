@@ -1,5 +1,21 @@
 .Header {
-  padding: 0 42px 0 8px;
+  display: flex;
+  padding: 0 42px 0 24px;
   height: 48px;
   background: #fff;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    a {
+      overflow: hidden;
+      display: block;
+      width: 210px;
+      height: 31px;
+      background: url('~@/assets/logo.png') no-repeat;
+      background-size: 100%;
+      text-indent: -9999px;
+      font-size: 0;
+    }
+  }
 }

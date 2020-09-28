@@ -59,6 +59,8 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
         theme="dark"
         style={{ background: 'transparent' }}
         defaultSelectedKeys={defaultKeys}
+        openKeys={[]}
+        selectedKeys={[]}
         onClick={to}
       >
         {menu.map((item, index) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { FC, PropsWithChildren } from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { RouteComponentProps } from 'react-router-dom'
 import store from '@/store'
 import { AUTH } from '@/store/modules/auth/actionTypes'
@@ -24,7 +24,13 @@ const Header: FC<HeaderProps> = (props: PropsWithChildren<HeaderProps>) => {
 
   return (
     <header className={styles.Header}>
-      <button onClick={logout}>logout</button>
+      <div className={styles.logo}>
+        <h1>
+          <Link className="logo" to="/home">
+            营业部智慧经营平台
+          </Link>
+        </h1>
+      </div>
     </header>
   )
 }

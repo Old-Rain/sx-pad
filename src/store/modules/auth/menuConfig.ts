@@ -13,6 +13,7 @@ export const menuConfig: {
   auth2: [
     {
       name: '会议管理',
+      path: '/session',
       icon: 'session',
       children: [
         {
@@ -29,6 +30,7 @@ export const menuConfig: {
   auth6: [
     {
       name: '活动管理',
+      path: '/action',
       icon: 'action',
       children: [
         {

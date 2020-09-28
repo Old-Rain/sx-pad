@@ -1,11 +1,12 @@
 @import '~@/styles/global.scss';
 
-.App {
+.Layout {
   height: 100vh;
 
-  .AppBody {
+  .body {
     display: flex;
-    height: calc(100% - 48px);
+    padding-top: 48px;
+    height: 100vh;
 
     aside.ignore {
       width: 166px;

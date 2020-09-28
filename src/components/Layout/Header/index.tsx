@@ -31,6 +31,8 @@ const Header: FC<HeaderProps> = (props: PropsWithChildren<HeaderProps>) => {
           </Link>
         </h1>
       </div>
+
+      <button onClick={logout}>退出</button>
     </header>
   )
 }

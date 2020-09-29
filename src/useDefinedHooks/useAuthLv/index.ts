@@ -11,7 +11,7 @@ function getAuthLv() {
   return store.getState().authModule.authLv
 }
 
-const useAuthLv = () => {
+const useAuthLv = (cb: (lv: number) => any) => {
   // 用户权限等级
   const [authLv, setAuthLv] = useState<number>(getAuthLv())
 
@@ -30,6 +30,12 @@ const useAuthLv = () => {
 
     // eslint-disable-next-line
   }, [])
+
+  useEffect(() => {
+    cb && cb(authLv)
+
+    // eslint-disable-next-line
+  }, [authLv])
 
   return authLv
 }

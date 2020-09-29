@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { withRouter } from 'react-router-dom'
 import { RouteComponentProps } from 'react-router-dom'
@@ -15,16 +15,16 @@ import { MenuInfo } from 'rc-menu/es/interface'
 interface AsideProps extends RouteComponentProps {}
 
 const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
-  // 用户权限等级
-  const authLv = useAuthLv()
-
   // 菜单列表
   const [menu, setMenu] = useState<MenuC[]>([])
 
   // 当前选中的菜单项
   const [selectedKeys, setSelectedKeys] = useState([`/${props.location.pathname.split('/')[1]}`])
 
-  // url变化时更新选中的菜单项
+  // 监听用户权限等级，更新菜单列表
+  useAuthLv((lv) => updateMenu(lv))
+
+  // 监听页面url，更新选中的菜单项
   useListenerURL((listener) => setSelectedKeys([`/${listener.pathname.split('/')[1]}`]))
 
   // 更新菜单
@@ -44,11 +44,6 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
 
     props.history.push(key as string)
   }
-
-  // 监听用户权限等级，更新菜单
-  useEffect(() => {
-    updateMenu(authLv)
-  }, [authLv])
 
   return (
     <div className={styles.Aside}>

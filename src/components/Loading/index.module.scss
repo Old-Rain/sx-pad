@@ -1,0 +1,49 @@
+@import '~@/styles/global.scss';
+
+@keyframes spinSpin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.Loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  .spin {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    animation: spinSpin 1s linear 0s infinite normal;
+
+    span {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      background: $themeColor;
+      border-radius: 8px;
+
+      &:nth-child(1) {
+        opacity: 0.25;
+      }
+      &:nth-child(2) {
+        opacity: 0.5;
+      }
+      &:nth-child(3) {
+        opacity: 0.75;
+      }
+      &:nth-child(4) {
+        opacity: 1;
+      }
+    }
+  }
+}

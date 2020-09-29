@@ -17,7 +17,7 @@ const Header: FC<HeaderProps> = (props: PropsWithChildren<HeaderProps>) => {
     clearUserInfo()
 
     // 卸载所有权限
-    store.dispatch({ type: AUTH.AUTH_UPDATE, value: false })
+    store.dispatch({ type: AUTH.UPDATE_AUTH_LV })
 
     props.history.push('/login')
   }

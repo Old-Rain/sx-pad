@@ -3,41 +3,32 @@
  */
 
 import { Reducer } from 'redux'
-
 import { CommonAction } from '@/store/reducers'
-import { Menu, Route } from './types'
+
+import { getUserInfo } from '@/utils/userInfo'
+
 import { AUTH } from './actionTypes'
 
 export interface AuthState {
   /**
-   * 菜单
+   * 用户权限等级
    */
-  menu: Menu[]
-
-  /**
-   * 路由
-   */
-  routes: Route[]
+  authLv: number
 }
 
 const authState: AuthState = {
-  menu: [],
-  routes: [],
+  authLv: getUserInfo().rankCode || 0,
 }
 
 const userModule: Reducer<AuthState, CommonAction> = (state = authState, action) => {
+  // eslint-disable-next-line
   const { type, value } = action
   const newState = { ...state }
 
   switch (type) {
-    // 更新菜单
-    case AUTH.UPDATE_MENU:
-      newState.menu = [...authState.menu, ...(value || [])]
-      return newState
-
-    // 更新路由
-    case AUTH.UPDATE_ROUTES:
-      newState.routes = [...authState.routes, ...value]
+    // 更新用户权限等级
+    case AUTH.UPDATE_AUTH_LV:
+      newState.authLv = getUserInfo().rankCode || 0
       return newState
 
     default:

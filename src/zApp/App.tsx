@@ -1,24 +1,16 @@
-import React, { Suspense, lazy } from 'react'
+import React, { Suspense } from 'react'
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom'
 
 import { getToken } from '@/utils/userInfo'
 
 import styles from './App.module.scss'
 
-import Login from '../views/Login'
 import Header from './components/Header'
 import Aside from './components/Aside'
+import Loading from '@/components/Loading'
 
-// 首页
-const Home = lazy(() => import(/* webpackChunkName: 'Home' */ '@/views/Home'))
-
-// 会议管理
-const Meeting = lazy(() => import(/* webpackChunkName: 'Session' */ '@/views/Session/Meeting'))
-const MissionCenter = lazy(() => import(/* webpackChunkName: 'Session' */ '@/views/Session/MissionCenter'))
-
-// 活动管理
-const InteractiveTack = lazy(() => import(/* webpackChunkName: 'Action' */ '@/views/Action/InteractiveTack'))
-const SmartManageBoard = lazy(() => import(/* webpackChunkName: 'Action' */ '@/views/Action/SmartManageBoard'))
+import Login from '@/views/Login'
+import TheRouter from '@/TheRouter'
 
 function App() {
   return (
@@ -34,12 +26,8 @@ function App() {
                 <Aside />
               </aside>
               <article>
-                <Suspense fallback={<div>loading...</div>}>
-                  <Route path="/home" component={Home} />
-                  <Route path="/meeting" component={Meeting} />
-                  <Route path="/missionCenter" component={MissionCenter} />
-                  <Route path="/interactiveTrack" component={InteractiveTack} />
-                  <Route path="/smartManageBoard" component={SmartManageBoard} />
+                <Suspense fallback={<Loading />}>
+                  <TheRouter />
                 </Suspense>
               </article>
             </div>

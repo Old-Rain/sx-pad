@@ -1,5 +1,32 @@
+@import '~@/styles/global.scss';
+
+@mixin dropdown($top: auto, $rignt: auto, $bottom: auto, $left: auto, $width: auto) {
+  .dropdown {
+    position: absolute;
+    left: $left;
+    right: $rignt;
+    top: $top;
+    bottom: $bottom;
+    width: $width;
+    background: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+    transition: all 0.3s;
+  }
+
+  &:hover > .dropdown {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
 .Header {
   display: flex;
+  align-items: center;
   position: fixed;
   left: 0;
   right: 0;
@@ -13,6 +40,8 @@
   .logo {
     display: flex;
     align-items: center;
+    width: 210px;
+    height: 48px;
     a {
       overflow: hidden;
       display: block;
@@ -22,6 +51,114 @@
       background-size: 100%;
       text-indent: -9999px;
       font-size: 0;
+    }
+  }
+
+  .actionArea {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 48px;
+
+    .actionItem {
+      margin-right: 16px;
+      width: 24px;
+      height: 24px;
+      background: url('~@/assets/spirit.png') no-repeat;
+      background-size: 100%;
+
+      &.search {
+        background-position: 0 -72px;
+      }
+      &.upload {
+        background-position: 0 -96px;
+      }
+      &.set {
+        background-position: 0 -120px;
+      }
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 260px;
+      height: 40px;
+
+      .avator {
+        overflow: hidden;
+        width: 40px;
+        height: 40px;
+        border: 2px solid #ededed;
+        border-radius: 50%;
+
+        img {
+          display: block;
+          width: 36px;
+          height: 36px;
+        }
+      }
+
+      .info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 12px;
+        height: 40px;
+        color: $textColorSub2;
+        font-size: 12px;
+      }
+
+      @include dropdown(50px, auto, auto, 0, 140px);
+      .dropdown {
+        li {
+          padding: 0 12px;
+          height: 32px;
+          line-height: 32px;
+
+          .username {
+            height: 32px;
+            line-height: 32px;
+            font-size: 14px;
+            font-weight: bold;
+            border-bottom: 1px solid $line;
+          }
+
+          .changeAuth {
+            position: relative;
+            height: 32px;
+
+            button {
+              display: flex;
+              width: 100%;
+              justify-content: space-between;
+              align-items: center;
+              height: 32px;
+            }
+
+            @include dropdown(0, auto, auto, 130px, 140px);
+          }
+
+          .authLvActived {
+            position: relative;
+
+            &::after {
+              content: '';
+              position: absolute;
+              right: 12px;
+              top: 12px;
+              width: 12px;
+              height: 6px;
+              border: 2px solid $themeColor;
+              border-top: 0;
+              border-right: 0;
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
     }
   }
 }

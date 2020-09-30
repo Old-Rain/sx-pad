@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { FC, PropsWithChildren, ReactElement } from 'react'
 
-import styles from './index.module.scss'
-
 import { FromTabItemProps } from '../FromTabItem'
+
+import styles from './index.module.scss'
 
 interface FormTabProps {
   /**

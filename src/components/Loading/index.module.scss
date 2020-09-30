@@ -21,16 +21,16 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     animation: spinSpin 1s linear 0s infinite normal;
 
     span {
       flex-shrink: 0;
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
       background: $themeColor;
-      border-radius: 8px;
+      border-radius: 6px;
 
       &:nth-child(1) {
         opacity: 0.25;

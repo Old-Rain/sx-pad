@@ -13,7 +13,7 @@ function getAuthLv() {
 
 export type UseAuthLvFn = (lv: number) => any
 
-const useAuthLv = (fn: UseAuthLvFn) => {
+const useAuthLv = (fn?: UseAuthLvFn) => {
   // 用户权限等级
   const [authLv, setAuthLv] = useState<number>(getAuthLv())
 
@@ -32,7 +32,7 @@ const useAuthLv = (fn: UseAuthLvFn) => {
   }, [])
 
   useEffect(() => {
-    fn(authLv)
+    fn?.(authLv)
   }, [authLv, fn])
 
   return authLv

@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-d
 
 import { getToken } from '@/utils/userInfo'
 
-import styles from './App.module.scss'
-
 import Header from './components/Header'
 import Aside from './components/Aside'
 import Loading from '@/components/Loading'
 
 import Login from '@/views/Login'
 import TheRouter from '@/TheRouter'
+
+import styles from './App.module.scss'
 
 function App() {
   return (

@@ -1,11 +1,11 @@
 import React, { forwardRef, useImperativeHandle, useRef, useEffect, useState, useLayoutEffect } from 'react'
 import { ForwardRefExoticComponent, RefAttributes } from 'react'
 
+import { isMobile, px2vw, domOffset, rangeInt } from '@/utils/tools'
+
 import styles from './index.module.scss'
 import soupImg from '@/assets/soup.png'
 import { soupList } from './soupList'
-
-import { isMobile, px2vw, domOffset, rangeInt } from '@/utils/tools'
 
 // 拼图样式
 function puzzleStyle(

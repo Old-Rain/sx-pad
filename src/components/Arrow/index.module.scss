@@ -1,0 +1,22 @@
+.Arrow {
+  width: 16px;
+  height: 16px;
+  background: url('~@/assets/arrow.png') no-repeat;
+  background-size: 16px;
+
+  &.Arrow-top {
+    background-position: 0 0;
+  }
+
+  &.Arrow-right {
+    background-position: 0 -16px;
+  }
+
+  &.Arrow-bottom {
+    background-position: 0 -32px;
+  }
+
+  &.Arrow-left {
+    background-position: 0 -48px;
+  }
+}

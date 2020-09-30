@@ -10,6 +10,16 @@ export function saveUserInfo(data: UserInfo) {
 }
 
 /**
+ * 更新用户权限等级
+ * @param authLv 用户信息参数
+ */
+export function updateUserInfo(authLv: number) {
+  const userInfo = getUserInfo()
+  userInfo.rankCode = authLv
+  saveUserInfo(userInfo)
+}
+
+/**
  * 清除用户信息
  */
 export function clearUserInfo() {

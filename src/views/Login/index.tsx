@@ -17,9 +17,9 @@ import FormTab from './components/FormTab'
 import FromTabItem from './components/FromTabItem'
 import Puzzle, { PuzzleComfirm } from './components/Puzzle'
 
+import styles from './index.module.scss'
 import logo from '@/assets/logo.png'
 import { bgList } from './bgList'
-import styles from './index.module.scss'
 
 /**
  * 扫码登录

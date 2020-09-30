@@ -3,6 +3,8 @@ import { ComponentType, ComponentClass, FC, LazyExoticComponent } from 'react'
 import Home from '@/views/Home/route'
 import Session from '@/views/Session/route'
 import Action from '@/views/Action/route'
+import AddMember from '@/views/AddMember/route'
+import Performance from '@/views/Performance/route'
 
 /**
  * 路由规则
@@ -40,6 +42,8 @@ export function slowImport(value: LazyComponent, ms = 300): LazyComponent {
 const auth1: RouteC[] = Home
 const auth2: RouteC[] = Session
 const auth6: RouteC[] = Action
+const auth8: RouteC[] = AddMember
+const auth10: RouteC[] = Performance
 
-export const routerConfig: { [propName: string]: RouteC[] } = { auth1, auth2, auth6 }
-export const fullRoute = [...auth1, ...auth2, ...auth6]
+export const routerConfig: { [propName: string]: RouteC[] } = { auth1, auth2, auth6, auth8, auth10 }
+export const fullRoute = [...auth1, ...auth2, ...auth6, ...auth8, ...auth10]

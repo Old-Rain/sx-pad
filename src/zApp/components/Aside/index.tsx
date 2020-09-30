@@ -7,12 +7,12 @@ import { useAuthLv, useListenerURL } from '@/useDefinedHooks'
 import { UseAuthLvFn } from '@/useDefinedHooks/useAuthLv'
 import { UseListenerURLFn } from '@/useDefinedHooks/useListenerURL'
 
+import { Menu } from 'antd'
+import { MenuInfo } from 'rc-menu/es/interface'
+
 import styles from './index.module.scss'
 import { menuConfig } from './menuConfig'
 import { MenuC } from './menuConfig'
-
-import { Menu } from 'antd'
-import { MenuInfo } from 'rc-menu/es/interface'
 
 interface AsideProps extends RouteComponentProps {}
 

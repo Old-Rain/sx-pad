@@ -47,4 +47,20 @@ const auth6: MenuC[] = [
   },
 ]
 
-export const menuConfig: { [propName: string]: MenuC[] } = { auth1, auth2, auth6 }
+const auth8: MenuC[] = [
+  {
+    name: '增员管理',
+    path: '/addMember',
+    icon: 'addMember',
+  },
+]
+
+const auth10: MenuC[] = [
+  {
+    name: '个人绩效',
+    path: '/performance',
+    icon: 'performance',
+  },
+]
+
+export const menuConfig: { [propName: string]: MenuC[] } = { auth1, auth2, auth6, auth8, auth10 }

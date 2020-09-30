@@ -6,11 +6,13 @@ import { useEffect, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Location, Action, UnregisterCallback } from 'history'
 
+export type UseListenerURLFn = (listener: Location, action: Action) => any
+
 export interface UseListenerURL {
-  (cb: (listener: Location, action: Action) => any): void
+  (fn: UseListenerURLFn): void
 }
 
-const useListenerURL: UseListenerURL = (cb) => {
+const useListenerURL: UseListenerURL = (fn) => {
   const history = useHistory<{}>()
 
   // 卸载url监听
@@ -19,15 +21,13 @@ const useListenerURL: UseListenerURL = (cb) => {
   useEffect(() => {
     // 监听url变化 更新当前选中的菜单项
     unregisterCallback.current = history.listen((listener, action) => {
-      cb(listener, action)
+      fn(listener, action)
     })
 
     return () => {
       unregisterCallback.current!()
     }
-
-    // eslint-disable-next-line
-  }, [])
+  }, [history, fn])
 }
 
 export default useListenerURL

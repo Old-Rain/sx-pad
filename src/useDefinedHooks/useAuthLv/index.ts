@@ -11,7 +11,9 @@ function getAuthLv() {
   return store.getState().authModule.authLv
 }
 
-const useAuthLv = (cb: (lv: number) => any) => {
+export type UseAuthLvFn = (lv: number) => any
+
+const useAuthLv = (fn: UseAuthLvFn) => {
   // 用户权限等级
   const [authLv, setAuthLv] = useState<number>(getAuthLv())
 
@@ -19,7 +21,7 @@ const useAuthLv = (cb: (lv: number) => any) => {
   const unsubscribe = useRef<Unsubscribe>()
 
   useEffect(() => {
-    // 监听store 更新菜单列表
+    // 监听store 更新用户权限等级
     unsubscribe.current = store.subscribe(() => {
       setAuthLv(getAuthLv())
     })
@@ -27,15 +29,11 @@ const useAuthLv = (cb: (lv: number) => any) => {
     return () => {
       unsubscribe.current!()
     }
-
-    // eslint-disable-next-line
   }, [])
 
   useEffect(() => {
-    cb && cb(authLv)
-
-    // eslint-disable-next-line
-  }, [authLv])
+    fn(authLv)
+  }, [authLv, fn])
 
   return authLv
 }

@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { withRouter } from 'react-router-dom'
 import { RouteComponentProps } from 'react-router-dom'
 
 import { useAuthLv, useListenerURL } from '@/useDefinedHooks'
+import { UseAuthLvFn } from '@/useDefinedHooks/useAuthLv'
+import { UseListenerURLFn } from '@/useDefinedHooks/useListenerURL'
 
 import styles from './index.module.scss'
 import { menuConfig } from './menuConfig'
@@ -21,11 +23,20 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
   // 当前选中的菜单项
   const [selectedKeys, setSelectedKeys] = useState([`/${props.location.pathname.split('/')[1]}`])
 
+  // 监听用户权限等级回调函数缓存
+  const authLvCallBack = useCallback<UseAuthLvFn>((lv) => updateMenu(lv), [])
+
   // 监听用户权限等级，更新菜单列表
-  useAuthLv((lv) => updateMenu(lv))
+  useAuthLv(authLvCallBack)
+
+  // 监听url回调函数缓存
+  const listenerCallBack = useCallback<UseListenerURLFn>(
+    (listener, action) => setSelectedKeys([`/${listener.pathname.split('/')[1]}`]),
+    [],
+  )
 
   // 监听页面url，更新选中的菜单项
-  useListenerURL((listener) => setSelectedKeys([`/${listener.pathname.split('/')[1]}`]))
+  useListenerURL(listenerCallBack)
 
   // 更新菜单
   function updateMenu(lv: number) {

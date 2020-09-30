@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import { useAuthLv } from '@/useDefinedHooks'
+import { UseAuthLvFn } from '@/useDefinedHooks/useAuthLv'
 
 import { routerConfig } from './routeConfig'
 import { RouteC } from './routeConfig'
@@ -15,8 +16,11 @@ const TheRouter: FC<TheRouterProps> = (props: PropsWithChildren<TheRouterProps>)
   // 路由
   const [routes, setRoutes] = useState<RouteC[]>([])
 
+  // 监听用户权限等级回调函数缓存
+  const authLvCallBack: UseAuthLvFn = useCallback<UseAuthLvFn>((lv) => updateRoutes(lv), [])
+
   // 监听用户权限等级，更新路由
-  useAuthLv((lv) => updateRoutes(lv))
+  useAuthLv(authLvCallBack)
 
   // 更新路由
   function updateRoutes(lv: number) {

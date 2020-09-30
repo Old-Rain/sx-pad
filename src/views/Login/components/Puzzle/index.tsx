@@ -112,7 +112,6 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
   const [trackOffsetLeft, setTrackOffsetLeft] = useState<number>(0)
 
   // 滑块
-  // eslint-disable-next-line/
   const thumbRef = useRef<HTMLDivElement>(null)
 
   // 滑块激活状态

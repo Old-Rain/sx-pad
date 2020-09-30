@@ -1,0 +1,1922 @@
+{
+  "code": "00",
+  "message": "成功",
+  "data": {
+    "secondaryResList": [
+      {
+        "secondaryType": "A",
+        "secondaryName": "主顾积累",
+        "emFieldIndicatorResList": [
+          {
+            "fieldNo": "A001",
+            "fieldIndicatorName": "部经理主顾开拓活动次数",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "A002",
+            "fieldIndicatorName": "部经理早会总结活动效果次数",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "A003",
+            "fieldIndicatorName": "新增主顾名单数（部月人均）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "A004",
+            "fieldIndicatorName": "金管家注册数（部月人均）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "A005",
+            "fieldIndicatorName": "e化转发次数（部月人均）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "secondaryType": "B",
+        "secondaryName": "互动开拓",
+        "emFieldIndicatorResList": [
+          {
+            "fieldNo": "B001",
+            "fieldIndicatorName": "钩子产品学习次数（部月）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "B002",
+            "fieldIndicatorName": "钩子产品转发次数（部月）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "B003",
+            "fieldIndicatorName": "钩子产品件数（部月人均）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "B004",
+            "fieldIndicatorName": "直播转发次数（部月人均）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "B005",
+            "fieldIndicatorName": "业务员浏览钩子产品及产品材料次数",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "B006",
+            "fieldIndicatorName": "业务员客户名单查克量",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "secondaryType": "C",
+        "secondaryName": "寿险促成",
+        "emFieldIndicatorResList": [
+          {
+            "fieldNo": "C001",
+            "fieldIndicatorName": "促成活动邀约人数（部均人均）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "C002",
+            "fieldIndicatorName": "促成活动参会人数（部均人均）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "人",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "C003",
+            "fieldIndicatorName": "产说会次数（部月）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "C004",
+            "fieldIndicatorName": "产说会检视次数（部月）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "C005",
+            "fieldIndicatorName": "建议书量（部月人均）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "C006",
+            "fieldIndicatorName": "投保制作书（部月人均）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "份",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "C007",
+            "fieldIndicatorName": "寿险件数（部月人均）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "件",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "secondaryType": "D",
+        "secondaryName": "服务经营",
+        "emFieldIndicatorResList": [
+          {
+            "fieldNo": "D001",
+            "fieldIndicatorName": "\"标准服务5+5\"服务完成率（部月）",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "%",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "%",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "%",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "%",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "%",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "%",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "%",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "%",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "%",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "%",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "%",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "%",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "D002",
+            "fieldIndicatorName": "部经理阻止征订分公司服务礼品次数",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          },
+          {
+            "fieldNo": "D003",
+            "fieldIndicatorName": "\"理赔保障日\"早会次数",
+            "fieldDataList": [
+              {
+                "trackTime": "2019-07",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2019-08",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2019-09",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2019-10",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2019-11",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2019-12",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              },
+              {
+                "trackTime": "2020-01",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "93",
+                "reachTargetValue": null
+              },
+              {
+                "trackTime": "2020-02",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": null,
+                "reachTargetValue": 78
+              },
+              {
+                "trackTime": "2020-03",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "88"
+              },
+              {
+                "trackTime": "2020-04",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "60",
+                "reachTargetValue": "95"
+              },
+              {
+                "trackTime": "2020-05",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "80",
+                "reachTargetValue": "89"
+              },
+              {
+                "trackTime": "2020-06",
+                "index": "次",
+                "trackFrequency": "M",
+                "actualValue": "100",
+                "reachTargetValue": "98"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,3 +1,7 @@
+/**
+ * 懒加载过渡组件
+ */
+
 import React from 'react'
 import { FC, PropsWithChildren } from 'react'
 

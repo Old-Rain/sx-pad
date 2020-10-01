@@ -1,0 +1,20 @@
+@import '~@/styles/global.scss';
+
+.CardTitle {
+  display: flex;
+  align-items: center;
+  height: 60px;
+
+  .block {
+    margin-right: 8px;
+    width: 4px;
+    height: 14px;
+    background: $textColorPrimary;
+  }
+
+  h3 {
+    font-weight: bold;
+    font-size: $fontSizeTitle;
+    color: $textColorPrimary;
+  }
+}

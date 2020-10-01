@@ -36,15 +36,6 @@ const LoginForQRCode: FC<LoginForQRCodeProps> = (props: LoginForQRCodeProps) => 
   // 二维码失效定时器
   const qrcodeTimer = useRef<NodeJS.Timeout | null>(null)
 
-  // 二维码过期计时
-  useEffect(() => {
-    getQRCode()
-
-    return () => {
-      clearTimeout(Number(qrcodeTimer.current))
-    }
-  }, [])
-
   // 获取二维码并渲染
   async function getQRCode() {
     const { data: res } = (await loginQRCode<string>()) || { data: null }
@@ -56,17 +47,25 @@ const LoginForQRCode: FC<LoginForQRCodeProps> = (props: LoginForQRCodeProps) => 
 
     setQrcodeStatus(1)
 
-    QRCode.toCanvas(qrcodeCanvas.current, `${res.data}${Math.random()}`, { margin: 1, width: px2vw(180) }, function (
-      error,
-    ) {
-      if (error) {
-        console.error(error)
-      }
-    })
+    QRCode.toCanvas(
+      qrcodeCanvas.current, // 容器DOM
+      `${res.data}${Math.random()}`, // 数据信息
+      { margin: 1, width: px2vw(180) }, // 边距、宽高
+      function (error) {}, // 错误回调
+    )
 
     // 二维码1分钟后过期
     qrcodeTimer.current = setTimeout(() => setQrcodeStatus(0), 60000)
   }
+
+  // 二维码过期计时
+  useEffect(() => {
+    getQRCode()
+
+    return () => {
+      clearTimeout(Number(qrcodeTimer.current))
+    }
+  }, [])
 
   return (
     <div className={styles.LoginForQRCode}>
@@ -77,8 +76,8 @@ const LoginForQRCode: FC<LoginForQRCodeProps> = (props: LoginForQRCodeProps) => 
           <span>刷新</span>
         </div>
       </div>
-      <p>请使用5.15及以上版本的口袋e扫码登录</p>
-      <button>下载口袋e</button>
+      <p>请使用4.4.3及以上版本的游利宝扫码登录</p>
+      <button>下载游利宝</button>
     </div>
   )
 }

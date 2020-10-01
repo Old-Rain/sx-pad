@@ -11,14 +11,14 @@ import Performance from '@/views/Performance/route'
  */
 export interface RouteC {
   /**
-   * 路径
-   */
-  path: string
-
-  /**
    * 名称
    */
   name: string
+
+  /**
+   * 路径
+   */
+  path: string
 
   /**
    * 是否精确匹配
@@ -40,8 +40,8 @@ export function slowImport(value: LazyComponent, ms = 300): LazyComponent {
 }
 
 const auth1: RouteC[] = Home
-const auth2: RouteC[] = Session
-const auth6: RouteC[] = Action
+const auth2: RouteC[] = Action
+const auth6: RouteC[] = Session
 const auth8: RouteC[] = AddMember
 const auth10: RouteC[] = Performance
 

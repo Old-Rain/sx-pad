@@ -36,7 +36,7 @@ const TheRouter: FC<TheRouterProps> = (props: PropsWithChildren<TheRouterProps>)
   return (
     <Switch>
       {routes.map((item, index) => (
-        <Route key={index} path={item.path} component={item.component} />
+        <Route key={index} path={item.path} exact={item.exact} component={item.component} />
       ))}
       <Route path="*" exact component={NotFound} />
     </Switch>

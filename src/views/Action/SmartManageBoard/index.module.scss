@@ -1,0 +1,35 @@
+@import '~@/styles/global.scss';
+
+.SmartManageBoard {
+  @include pageBase;
+
+  .title {
+    display: flex;
+    padding: 0 8px;
+    height: 40px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+
+  & :global(.ant-tabs .ant-tabs-nav::before) {
+    border: 0;
+  }
+  & :global(.ant-tabs-ink-bar) {
+    background: $themeColor;
+  }
+  & :global(.ant-tabs .ant-tabs-nav::before) {
+    border: 0;
+  }
+  & :global(.ant-tabs-tab .ant-tabs-tab-btn) {
+    font-size: 16px;
+  }
+  & :global(.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn) {
+    font-weight: bold;
+    color: $themeColor;
+  }
+}

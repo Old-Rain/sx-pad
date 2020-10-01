@@ -1,0 +1,158 @@
+@import '~@/styles/global.scss';
+
+.Table {
+  position: relative;
+  font-size: 14px;
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: calc(100% - 6px);
+    background: $line;
+  }
+
+  // 固定区域
+  .fixedArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(100% - 720px);
+    z-index: 1;
+
+    .shadow {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.1), transparent);
+      opacity: 0;
+      transform-origin: 0 0;
+      transition: all 0.3s;
+    }
+    .shadow.show {
+      right: -8px;
+      width: 8px;
+      opacity: 1;
+    }
+  }
+
+  // 滚动区域
+  .scrollArea {
+    overflow: auto;
+    position: relative;
+    margin-left: calc(100% - 720px);
+    width: 720px;
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 3px;
+      background: #ddd;
+    }
+
+    .scrollView {
+      width: 1440px;
+    }
+  }
+
+  // 偶数行浅蓝
+  .tdDWrapEven {
+    background: #f5f7fa;
+  }
+
+  // 表头灰色
+  .firstTr {
+    background: #f8f8f8;
+    color: $textColorSub2;
+  }
+
+  // 固定区域tr
+  .fixedTr {
+    display: flex;
+    border-left: 1px solid $line;
+    border-top: 1px solid $line;
+    &:nth-last-child(2) {
+      border-bottom: 1px solid $line;
+    }
+
+    .fixedTd {
+      border-right: 1px solid $line;
+    }
+
+    .fixedTd:nth-child(1) {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      width: 96px;
+    }
+
+    .fixedTd:nth-child(2) {
+      flex: 1;
+
+      .fixedTdDWrap {
+        display: flex;
+        border-bottom: 1px solid $line;
+        &:last-child {
+          border-bottom: 0;
+        }
+
+        .fixedTdD {
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+          height: 40px;
+          border-right: 1px solid $line;
+          &:last-child {
+            border-right: 0;
+          }
+        }
+
+        .fixedTdD:nth-child(1) {
+          flex: 1;
+        }
+
+        .fixedTdD:nth-child(2) {
+          flex: 80px;
+          flex-grow: 0;
+        }
+      }
+    }
+  }
+
+  // 滚动区域tr
+  .scrollTr {
+    border-top: 1px solid $line;
+    &:last-child {
+      border-bottom: 1px solid $line;
+    }
+
+    .scrollTd {
+      // border-right: 1px solid $line;
+
+      .scrollTdDWrap {
+        display: flex;
+        border-bottom: 1px solid $line;
+        &:last-child {
+          border-bottom: 0;
+        }
+
+        .scrollTdD {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+          width: 120px;
+          height: 40px;
+          border-right: 1px solid $line;
+          &:last-child {
+            border-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

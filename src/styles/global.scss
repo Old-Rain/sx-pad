@@ -18,3 +18,10 @@ $textColorTip: #ccc;
     clear: both;
   }
 }
+
+@mixin pageBase {
+  overflow: auto;
+  padding: 24px 24px 8px;
+  width: 100%;
+  height: 100%;
+}

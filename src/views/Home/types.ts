@@ -1,7 +1,7 @@
 /**
  * 子指标周期数据
  */
-export interface FieldDataList {
+export interface FieldData {
   /**
    * 时间
    */
@@ -26,12 +26,17 @@ export interface FieldDataList {
    * 目标值
    */
   reachTargetValue: string
+
+  /**
+   * 挑战值
+   */
+  challengeTargetValue: string
 }
 
 /**
  * 子指标信息
  */
-export interface EmFieldIndicatorResList {
+export interface EmFieldIndicatorRes {
   /**
    * 指标编号
    */
@@ -45,14 +50,19 @@ export interface EmFieldIndicatorResList {
   /**
    * 指标周期数据列表
    */
-  fieldDataList: FieldDataList[]
+  fieldDataList: FieldData[]
+
+  /**
+   * 相对于所有子指标的排序
+   */
+  realIndex?: number
 }
 
 /**
  * 主指标
  */
 
-export interface SecondaryResList {
+export interface SecondaryRes {
   /**
    * 指标类型
    */
@@ -66,5 +76,5 @@ export interface SecondaryResList {
   /**
    * 子指标信息列表
    */
-  emFieldIndicatorResList: EmFieldIndicatorResList[]
+  emFieldIndicatorResList: EmFieldIndicatorRes[]
 }

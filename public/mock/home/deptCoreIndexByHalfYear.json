@@ -10,43 +10,49 @@
           "trackTime": "2020-01",
           "indexUtil": "次",
           "trackFrequency": "M",
-          "actualValue": "93",
-          "reachTargetValue": null
+          "actualValue": "56",
+          "reachTargetValue": null,
+          "challengeTargetValue": "68"
         },
         {
           "trackTime": "2020-02",
           "indexUtil": "次",
           "trackFrequency": "M",
           "actualValue": null,
-          "reachTargetValue": 78
+          "reachTargetValue": 34,
+          "challengeTargetValue": "77"
         },
         {
           "trackTime": "2020-03",
           "indexUtil": "次",
           "trackFrequency": "M",
           "actualValue": "100",
-          "reachTargetValue": "88"
+          "reachTargetValue": "88",
+          "challengeTargetValue": "85"
         },
         {
           "trackTime": "2020-04",
           "indexUtil": "次",
           "trackFrequency": "M",
           "actualValue": "60",
-          "reachTargetValue": "95"
+          "reachTargetValue": "88",
+          "challengeTargetValue": "48"
         },
         {
           "trackTime": "2020-05",
           "indexUtil": "次",
           "trackFrequency": "M",
           "actualValue": "80",
-          "reachTargetValue": "89"
+          "reachTargetValue": "90",
+          "challengeTargetValue": "63"
         },
         {
           "trackTime": "2020-06",
           "indexUtil": "次",
           "trackFrequency": "M",
-          "actualValue": "100",
-          "reachTargetValue": "98"
+          "actualValue": "68",
+          "reachTargetValue": "98",
+          "challengeTargetValue": "98"
         }
       ]
     },
@@ -59,42 +65,48 @@
           "indexUtil": "件",
           "trackFrequency": "M",
           "actualValue": "93",
-          "reachTargetValue": null
+          "reachTargetValue": "82",
+          "challengeTargetValue": "72"
         },
         {
           "trackTime": "2020-02",
           "indexUtil": "件",
           "trackFrequency": "M",
-          "actualValue": null,
-          "reachTargetValue": 78
+          "actualValue": "68",
+          "reachTargetValue": "42",
+          "challengeTargetValue": "48"
         },
         {
           "trackTime": "2020-03",
           "indexUtil": "件",
           "trackFrequency": "M",
           "actualValue": "100",
-          "reachTargetValue": "88"
+          "reachTargetValue": "88",
+          "challengeTargetValue": "55"
         },
         {
           "trackTime": "2020-04",
           "indexUtil": "件",
           "trackFrequency": "M",
           "actualValue": "60",
-          "reachTargetValue": "95"
+          "reachTargetValue": "77",
+          "challengeTargetValue": "88"
         },
         {
           "trackTime": "2020-05",
           "indexUtil": "件",
           "trackFrequency": "M",
-          "actualValue": "80",
-          "reachTargetValue": "89"
+          "actualValue": "96",
+          "reachTargetValue": "89",
+          "challengeTargetValue": "93"
         },
         {
           "trackTime": "2020-06",
           "indexUtil": "件",
           "trackFrequency": "M",
-          "actualValue": "100",
-          "reachTargetValue": "98"
+          "actualValue": "80",
+          "reachTargetValue": "100",
+          "challengeTargetValue": "68"
         }
       ]
     },
@@ -107,42 +119,48 @@
           "indexUtil": "件",
           "trackFrequency": "M",
           "actualValue": "93",
-          "reachTargetValue": null
+          "reachTargetValue": "78",
+          "challengeTargetValue": "38"
         },
         {
           "trackTime": "2020-02",
           "indexUtil": "件",
           "trackFrequency": "M",
-          "actualValue": null,
-          "reachTargetValue": 78
+          "actualValue": "88",
+          "reachTargetValue": "55",
+          "challengeTargetValue": "36"
         },
         {
           "trackTime": "2020-03",
           "indexUtil": "件",
           "trackFrequency": "M",
           "actualValue": "100",
-          "reachTargetValue": "88"
+          "reachTargetValue": "88",
+          "challengeTargetValue": "68"
         },
         {
           "trackTime": "2020-04",
           "indexUtil": "件",
           "trackFrequency": "M",
           "actualValue": "60",
-          "reachTargetValue": "95"
+          "reachTargetValue": "95",
+          "challengeTargetValue": "78"
         },
         {
           "trackTime": "2020-05",
           "indexUtil": "件",
           "trackFrequency": "M",
-          "actualValue": "80",
-          "reachTargetValue": "89"
+          "actualValue": "68",
+          "reachTargetValue": "99",
+          "challengeTargetValue": "87"
         },
         {
           "trackTime": "2020-06",
           "indexUtil": "件",
           "trackFrequency": "M",
           "actualValue": "100",
-          "reachTargetValue": "98"
+          "reachTargetValue": "98",
+          "challengeTargetValue": "68"
         }
       ]
     },
@@ -155,42 +173,48 @@
           "indexUtil": "%",
           "trackFrequency": "M",
           "actualValue": "93",
-          "reachTargetValue": null
+          "reachTargetValue": "95",
+          "challengeTargetValue": "68"
         },
         {
           "trackTime": "2020-02",
           "indexUtil": "%",
           "trackFrequency": "M",
-          "actualValue": null,
-          "reachTargetValue": 78
+          "actualValue": "59",
+          "reachTargetValue": "98",
+          "challengeTargetValue": "89"
         },
         {
           "trackTime": "2020-03",
           "indexUtil": "%",
           "trackFrequency": "M",
           "actualValue": "100",
-          "reachTargetValue": "88"
+          "reachTargetValue": "88",
+          "challengeTargetValue": "98"
         },
         {
           "trackTime": "2020-04",
           "indexUtil": "%",
           "trackFrequency": "M",
           "actualValue": "60",
-          "reachTargetValue": "95"
+          "reachTargetValue": "95",
+          "challengeTargetValue": "47"
         },
         {
           "trackTime": "2020-05",
           "indexUtil": "%",
           "trackFrequency": "M",
-          "actualValue": "80",
-          "reachTargetValue": "89"
+          "actualValue": "84",
+          "reachTargetValue": "63",
+          "challengeTargetValue": "74"
         },
         {
           "trackTime": "2020-06",
           "indexUtil": "%",
           "trackFrequency": "M",
-          "actualValue": "100",
-          "reachTargetValue": "98"
+          "actualValue": "99",
+          "reachTargetValue": "88",
+          "challengeTargetValue": "100"
         }
       ]
     }

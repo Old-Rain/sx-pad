@@ -1,0 +1,40 @@
+.LineChart {
+  margin: 0 auto;
+  width: 100%;
+  height: 320px;
+  background: #fdfdfd;
+
+  & :global(.dc-tooltip) {
+    padding: 12px 24px;
+    background: #fff;
+    border: 1px solid #e4e7ed;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+  }
+
+  & :global(.dc-tooltip-item) {
+    display: flex;
+    align-items: center;
+    line-height: 24px;
+    font-size: 12px;
+    color: #606266;
+
+    & :global(.block) {
+      margin-right: 8px;
+      width: 8px;
+      height: 8px;
+    }
+  }
+  & :global(.actual .block) {
+    background: #f2c961;
+  }
+  & :global(.actual .wran) {
+    color: #f56c6c;
+  }
+  & :global(.reach .block) {
+    background: #7acc7e;
+  }
+  & :global(.challenge .block) {
+    background: #5c97f8;
+  }
+}

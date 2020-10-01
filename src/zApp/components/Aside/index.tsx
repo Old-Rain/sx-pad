@@ -14,6 +14,21 @@ import styles from './index.module.scss'
 import { menuConfig } from './menuConfig'
 import { MenuC } from './menuConfig'
 
+// 选中的节点
+function currentKeys(pathname: string) {
+  const pathHierarchy = pathname.split('/')
+
+  if (pathHierarchy.length === 2) {
+    return [`/${pathHierarchy[1]}`]
+  }
+
+  if (pathHierarchy.length > 2) {
+    return [`/${pathHierarchy[1]}/${pathHierarchy[2]}`]
+  }
+
+  return ['']
+}
+
 interface AsideProps extends RouteComponentProps {}
 
 const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
@@ -21,7 +36,7 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
   const [menu, setMenu] = useState<MenuC[]>([])
 
   // 当前选中的菜单项
-  const [selectedKeys, setSelectedKeys] = useState([props.location.pathname])
+  const [selectedKeys, setSelectedKeys] = useState(currentKeys(props.location.pathname))
 
   // 监听用户权限等级回调函数缓存
   const authLvCallBack = useCallback<UseAuthLvFn>((lv) => updateMenu(lv), [])
@@ -31,7 +46,7 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
 
   // 监听url回调函数缓存
   const listenerCallBack = useCallback<UseListenerURLFn>((listener, action) => {
-    setSelectedKeys([listener.pathname])
+    setSelectedKeys(currentKeys(listener.pathname))
   }, [])
 
   // 监听页面url，更新选中的菜单项
@@ -51,8 +66,6 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
   // 点击菜单项
   function clickMenuItem({ key }: MenuInfo) {
     if (props.location.pathname === key) return
-
-    console.log(key)
 
     props.history.push(key as string)
   }

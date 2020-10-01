@@ -6,8 +6,8 @@ const AddMember = lazy(() => slowImport(import('./index')))
 
 const routes: RouteC[] = [
   {
-    path: '/addMember',
     name: '增员管理',
+    path: '/addMember',
     component: AddMember,
   },
 ]

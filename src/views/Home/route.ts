@@ -6,8 +6,8 @@ const Home = lazy(() => slowImport(import('./index')))
 
 const routes: RouteC[] = [
   {
-    path: '/home',
     name: '首页',
+    path: '/home',
     component: Home,
   },
 ]

@@ -26,23 +26,23 @@ export interface MenuC {
 const auth1: MenuC[] = [{ name: '首页', path: '/home', icon: 'home' }]
 const auth2: MenuC[] = [
   {
+    name: '活动管理',
+    path: '/action',
+    icon: 'action',
+    children: [
+      { name: '智慧经营看板', path: '/action/smartManageBoard' },
+      { name: '活动结果看板', path: '/action/interactiveTrack' },
+    ],
+  },
+]
+const auth6: MenuC[] = [
+  {
     name: '会议管理',
     path: '/session',
     icon: 'session',
     children: [
       { name: '行事历', path: '/session/meeting' },
       { name: '任务中心', path: '/session/missionCenter' },
-    ],
-  },
-]
-const auth6: MenuC[] = [
-  {
-    name: '活动管理',
-    path: '/action',
-    icon: 'action',
-    children: [
-      { name: '活动结果看板', path: '/action/interactiveTrack' },
-      { name: '智慧经营看板', path: '/action/smartManageBoard' },
     ],
   },
 ]

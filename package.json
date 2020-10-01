@@ -23,6 +23,7 @@
     "@types/react-router-dom": "^5.1.5",
     "antd": "^4.6.6",
     "axios": "^0.20.0",
+    "echarts": "^4.9.0",
     "qrcode": "^1.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

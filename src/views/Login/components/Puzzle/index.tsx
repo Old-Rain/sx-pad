@@ -1,3 +1,7 @@
+/**
+ * 拼图验证
+ */
+
 import React, { forwardRef, useImperativeHandle, useRef, useEffect, useState, useLayoutEffect } from 'react'
 import { ForwardRefExoticComponent, RefAttributes } from 'react'
 

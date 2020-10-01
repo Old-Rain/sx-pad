@@ -35,7 +35,7 @@
   height: 48px;
   background: #fff;
   box-shadow: 0 0 12px 6px rgba(0, 0, 0, 0.1);
-  z-index: 99999;
+  z-index: 1000;
 
   .logo {
     display: flex;
@@ -45,8 +45,8 @@
     a {
       overflow: hidden;
       display: block;
-      width: 210px;
-      height: 31px;
+      width: 180px;
+      height: 48px;
       background: url('~@/assets/logo.png') no-repeat;
       background-size: 100%;
       text-indent: -9999px;

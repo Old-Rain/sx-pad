@@ -21,7 +21,7 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
   const [menu, setMenu] = useState<MenuC[]>([])
 
   // 当前选中的菜单项
-  const [selectedKeys, setSelectedKeys] = useState([`/${props.location.pathname.split('/')[1]}`])
+  const [selectedKeys, setSelectedKeys] = useState([props.location.pathname])
 
   // 监听用户权限等级回调函数缓存
   const authLvCallBack = useCallback<UseAuthLvFn>((lv) => updateMenu(lv), [])
@@ -30,10 +30,9 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
   useAuthLv(authLvCallBack)
 
   // 监听url回调函数缓存
-  const listenerCallBack = useCallback<UseListenerURLFn>(
-    (listener, action) => setSelectedKeys([`/${listener.pathname.split('/')[1]}`]),
-    [],
-  )
+  const listenerCallBack = useCallback<UseListenerURLFn>((listener, action) => {
+    setSelectedKeys([listener.pathname])
+  }, [])
 
   // 监听页面url，更新选中的菜单项
   useListenerURL(listenerCallBack)
@@ -53,6 +52,8 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
   function clickMenuItem({ key }: MenuInfo) {
     if (props.location.pathname === key) return
 
+    console.log(key)
+
     props.history.push(key as string)
   }
 
@@ -63,6 +64,7 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
         theme="dark"
         style={{ background: 'transparent' }}
         selectedKeys={selectedKeys}
+        defaultOpenKeys={[`/${props.location.pathname.split('/')[1]}`]}
         onClick={clickMenuItem}
       >
         {menu.map((item, index) => {

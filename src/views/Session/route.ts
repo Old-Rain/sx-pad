@@ -7,12 +7,12 @@ const MissionCenter = lazy(() => slowImport(import('./MissionCenter')))
 
 const routes: RouteC[] = [
   {
-    path: '/Meeting',
+    path: '/session/Meeting',
     name: '行事历',
     component: Meeting,
   },
   {
-    path: '/MissionCenter',
+    path: '/session/MissionCenter',
     name: '任务中心',
     component: MissionCenter,
   },

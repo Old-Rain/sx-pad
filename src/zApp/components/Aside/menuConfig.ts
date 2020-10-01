@@ -30,8 +30,8 @@ const auth2: MenuC[] = [
     path: '/session',
     icon: 'session',
     children: [
-      { name: '行事例', path: '/meeting' },
-      { name: '任务中心', path: '/missionCenter' },
+      { name: '行事历', path: '/session/meeting' },
+      { name: '任务中心', path: '/session/missionCenter' },
     ],
   },
 ]
@@ -41,8 +41,8 @@ const auth6: MenuC[] = [
     path: '/action',
     icon: 'action',
     children: [
-      { name: '活动结果看板', path: '/interactiveTrack' },
-      { name: '智慧经营看板', path: '/smartManageBoard' },
+      { name: '活动结果看板', path: '/action/interactiveTrack' },
+      { name: '智慧经营看板', path: '/action/smartManageBoard' },
     ],
   },
 ]

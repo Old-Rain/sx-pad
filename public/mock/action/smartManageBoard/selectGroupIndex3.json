@@ -1,0 +1,156 @@
+{
+  "code": "00",
+  "message": "成功",
+  "data": [
+    {
+      "groupName": "昆仑山玉虚宫组",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "90",
+      "groupId": "G1015",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "groupName": "九宫山白鹤洞组",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "65",
+      "groupId": "G1003",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "groupName": "五龙山云霄洞组",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "78",
+      "groupId": "G1001",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "groupName": "终南山玉柱洞组",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "60",
+      "groupId": "G1004",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "groupName": "骷髅山白骨洞组",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "60",
+      "groupId": "G1005",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "groupName": "乾元山金光洞组",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "60",
+      "groupId": "G1002",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "groupName": "九仙山桃源洞",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "60",
+      "groupId": "G1006",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "groupName": "太华山云霄洞组",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "60",
+      "groupId": "G1009",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "groupName": "玉泉山金霞洞",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "60",
+      "groupId": "G1008",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "groupName": "二仙山麻姑洞",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "60",
+      "groupId": "G1009",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "groupName": "青峰山紫阳洞",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "60",
+      "groupId": "G1007",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "groupName": "夹龙山飞龙洞组",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "60",
+      "groupId": "G1010",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "groupName": "崆峒山元阳洞组",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "60",
+      "groupId": "G1011",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "groupName": "普陀山落伽洞组",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "60",
+      "groupId": "G1013",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "groupName": "金庭山玉屋洞组",
+      "month": "2020-08",
+      "indexName": "当月用户流量",
+      "historyGrandValue": "60",
+      "groupId": "G1012",
+      "deptId": "1010102",
+      "indexUnit": "人",
+      "indexCode": "A"
+    }
+  ]
+}

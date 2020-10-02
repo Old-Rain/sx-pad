@@ -1,0 +1,34 @@
+@import '~@/styles/global.scss';
+
+.TheDatePicker {
+  display: flex;
+
+  .dateFormat {
+    margin-right: 20px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: $textColorSub2;
+  }
+
+  .datePicker {
+    height: 40px;
+
+    & :global(.ant-picker-input) {
+      padding-left: 20px;
+
+      & :global(.ant-picker-suffix) {
+        position: absolute;
+        margin: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+// 下拉菜单
+.datePickerDropdown {
+  & :global(.ant-picker-header-view button) {
+    width: 100%;
+  }
+}

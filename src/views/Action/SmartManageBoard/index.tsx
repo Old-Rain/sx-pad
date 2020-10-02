@@ -7,6 +7,7 @@ import { FC, PropsWithChildren } from 'react'
 
 import { Tabs } from 'antd'
 import Layout from '@/components/Layout'
+import TheDatePicker from './components/TheDatePicker'
 import CustomerOperation from './components/CustomerOperation'
 import CustomerAction from './components/CustomerAction'
 
@@ -17,10 +18,10 @@ interface SmartManageBoardProps {}
 const SmartManageBoard: FC<SmartManageBoardProps> = (props: PropsWithChildren<SmartManageBoardProps>) => {
   return (
     <div className={styles.SmartManageBoard}>
-      <Layout>
-        <div className={styles.title}>
-          <h2>智慧经营看板</h2>
-        </div>
+      <Layout extraClass={styles.title}>
+        <h2>智慧经营看板</h2>
+
+        <TheDatePicker extraClass={styles.theDatePicker} />
       </Layout>
 
       <Tabs defaultActiveKey="1">

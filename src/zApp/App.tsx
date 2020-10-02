@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-d
 
 import { getToken } from '@/utils/userInfo'
 
+import { ConfigProvider } from 'antd'
 import Header from './components/Header'
 import Aside from './components/Aside'
 import Loading from '@/components/Loading'
@@ -12,29 +13,34 @@ import TheRouter from '@/TheRouter'
 
 import styles from './App.module.scss'
 
+import 'moment/locale/zh-cn'
+import locale from 'antd/es/locale/zh_CN'
+
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/" exact render={() => <Redirect to={getToken() ? '/home' : '/login'} />} />
-        <Route path="/login" component={Login} />
-        <>
-          <div className={styles.layout}>
-            <Header />
-            <div className={styles.body}>
-              <aside className={styles.ignore}>
-                <Aside />
-              </aside>
-              <article>
-                <Suspense fallback={<Loading />}>
-                  <TheRouter />
-                </Suspense>
-              </article>
+    <ConfigProvider locale={locale}>
+      <Router>
+        <Switch>
+          <Route path="/" exact render={() => <Redirect to={getToken() ? '/home' : '/login'} />} />
+          <Route path="/login" component={Login} />
+          <>
+            <div className={styles.layout}>
+              <Header />
+              <div className={styles.body}>
+                <aside className={styles.ignore}>
+                  <Aside />
+                </aside>
+                <article>
+                  <Suspense fallback={<Loading />}>
+                    <TheRouter />
+                  </Suspense>
+                </article>
+              </div>
             </div>
-          </div>
-        </>
-      </Switch>
-    </Router>
+          </>
+        </Switch>
+      </Router>
+    </ConfigProvider>
   )
 }
 

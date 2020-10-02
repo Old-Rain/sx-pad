@@ -1,0 +1,204 @@
+{
+  "code": "00",
+  "message": "成功",
+  "data": {
+    "areaId": "10101",
+    "month": "2020-08",
+    "deptIndexResList": [
+      {
+        "indexLv": "1",
+        "indexCode": "A",
+        "indexName": "当月用户流量",
+        "indexUnit": null,
+        "standardAvgValue": "60",
+        "historyGrandValue": "80",
+        "avgValue": "60",
+        "historyAvgValue": "0",
+        "grandValue": "70",
+        "secondaryIndexList": [
+          {
+            "parentIndexCode": "A",
+            "indexLv": "2",
+            "indexCode": "A001",
+            "indexName": "当月金管家活跃用户数",
+            "indexUnit": null,
+            "standardAvgValue": "60",
+            "avgValue": "60",
+            "grandValue": "60"
+          },
+          {
+            "parentIndexCode": "A",
+            "indexLv": "2",
+            "indexCode": "A002",
+            "indexName": "当月阅读或参加线下活动的用户数",
+            "indexUnit": null,
+            "standardAvgValue": null,
+            "avgValue": "60",
+            "grandValue": "60"
+          }
+        ]
+      },
+      {
+        "indexLv": "1",
+        "indexCode": "B",
+        "indexName": "累计潜客量",
+        "indexUnit": null,
+        "standardAvgValue": "80",
+        "historyGrandValue": "80",
+        "avgValue": "0",
+        "historyAvgValue": "60",
+        "grandValue": "60",
+        "secondaryIndexList": [
+          {
+            "parentIndexCode": "B",
+            "indexLv": "2",
+            "indexCode": "B001",
+            "indexName": "累计O2O产品客户数",
+            "indexUnit": null,
+            "standardAvgValue": "68",
+            "avgValue": "",
+            "grandValue": "60"
+          },
+          {
+            "parentIndexCode": "B",
+            "indexLv": "2",
+            "indexCode": "B002",
+            "indexName": "累计综拓产品客户数",
+            "indexUnit": null,
+            "standardAvgValue": "88",
+            "avgValue": "60",
+            "grandValue": "60"
+          },
+          {
+            "parentIndexCode": "B",
+            "indexLv": "2",
+            "indexCode": "B003",
+            "indexName": "累计线上活动参与客户数",
+            "indexUnit": null,
+            "standardAvgValue": "67",
+            "avgValue": "60",
+            "grandValue": "60"
+          },
+          {
+            "parentIndexCode": "B",
+            "indexLv": "2",
+            "indexCode": "B004",
+            "indexName": "累计线下活动参与客户数",
+            "indexUnit": null,
+            "standardAvgValue": "69",
+            "avgValue": "60",
+            "grandValue": "60"
+          }
+        ]
+      },
+      {
+        "indexLv": "1",
+        "indexCode": "C",
+        "indexName": "了解/兴趣/意愿客户数",
+        "indexUnit": null,
+        "standardAvgValue": "85",
+        "historyGrandValue": "80",
+        "avgValue": "60",
+        "historyAvgValue": "60",
+        "grandValue": "60",
+        "secondaryIndexList": [
+          {
+            "parentIndexCode": "C",
+            "indexLv": "2",
+            "indexCode": "C001",
+            "indexName": "阅读长险产品客户数",
+            "indexUnit": null,
+            "standardAvgValue": "79",
+            "avgValue": "60",
+            "grandValue": "70"
+          },
+          {
+            "parentIndexCode": "C",
+            "indexLv": "2",
+            "indexCode": "C002",
+            "indexName": "测算或阅读智慧保客数",
+            "indexUnit": null,
+            "standardAvgValue": "0",
+            "avgValue": "60",
+            "grandValue": "60"
+          },
+          {
+            "parentIndexCode": "C",
+            "indexLv": "2",
+            "indexCode": "C003",
+            "indexName": "产说会报名客户数",
+            "indexUnit": null,
+            "standardAvgValue": "81",
+            "avgValue": null,
+            "grandValue": "60"
+          },
+          {
+            "parentIndexCode": "C",
+            "indexLv": "2",
+            "indexCode": "C004",
+            "indexName": "观看产品直播客户数",
+            "indexUnit": null,
+            "standardAvgValue": "86",
+            "avgValue": "60",
+            "grandValue": ""
+          },
+          {
+            "parentIndexCode": "C",
+            "indexLv": "2",
+            "indexCode": "C005",
+            "indexName": "预约线下产品客户数",
+            "indexUnit": null,
+            "standardAvgValue": "78",
+            "avgValue": "60",
+            "grandValue": "60"
+          }
+        ]
+      },
+      {
+        "indexLv": "1",
+        "indexCode": "D",
+        "indexName": "了解/兴趣/意愿客户数",
+        "indexUnit": null,
+        "standardAvgValue": "79",
+        "historyGrandValue": "80",
+        "avgValue": "60",
+        "historyAvgValue": "60",
+        "grandValue": "60",
+        "secondaryIndexList": [
+          {
+            "parentIndexCode": "D",
+            "indexLv": "2",
+            "indexCode": "D001",
+            "indexName": "面访扫码客户数",
+            "indexUnit": null,
+            "standardAvgValue": "20",
+            "avgValue": "60",
+            "grandValue": "70"
+          },
+          {
+            "parentIndexCode": "D",
+            "indexLv": "2",
+            "indexCode": "D002",
+            "indexName": "活动扫码客户数",
+            "indexUnit": null,
+            "standardAvgValue": "30",
+            "avgValue": "60",
+            "grandValue": "60"
+          }
+        ]
+      },
+      {
+        "indexLv": "1",
+        "indexCode": "E",
+        "indexName": "转化长险客户数",
+        "indexUnit": null,
+        "standardAvgValue": "25",
+        "historyGrandValue": "80",
+        "avgValue": "60",
+        "historyAvgValue": "60",
+        "grandValue": "60",
+        "secondaryIndexList": []
+      }
+    ]
+  }
+}

@@ -2,7 +2,7 @@
  * 客户经营漏斗详情页
  */
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { FC, PropsWithChildren } from 'react'
 
 import styles from './index.module.scss'

@@ -38,3 +38,12 @@ export function domOffset(dom: HTMLElement) {
 export function rangeInt(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
+
+/**
+ * 获取某月份的最后一天
+ */
+export function getMonthLastDay(value: Date | string | number): number {
+  const thatDate = new Date(value)
+
+  return thatDate.setMonth(thatDate.getMonth() + 1) - 1000 * 60 * 60 * 24
+}

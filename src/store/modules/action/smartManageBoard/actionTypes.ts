@@ -1,0 +1,5 @@
+export const SMART_MANAGE_BOARD = {
+  UPDATE_MONTH: 'SMB__UPDATE_MONTH', // 更新全局时间
+  GET_DEPT_INDEX: 'SMB__GET_DEPT_INDEX', // 获取客户经营漏斗指标
+  UPDATE_DEPT_INDEX: 'SMB__UPDATE_DEPT_INDEX', // 更新客户经营漏斗指标
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { RouteComponentProps } from 'react-router-dom'
+
 import store from '@/store'
 import { AUTH } from '@/store/modules/auth/actionTypes'
 

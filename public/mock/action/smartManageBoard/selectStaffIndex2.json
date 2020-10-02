@@ -1,0 +1,132 @@
+{
+  "code": "00",
+  "message": "成功",
+  "data": [
+    {
+      "indexName": "当月用户流量",
+      "historyGrandValue": "29",
+      "groupId": "G1001",
+      "empName": "广成子",
+      "empNo": "E1002",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "indexName": "当月用户流量",
+      "historyGrandValue": "29",
+      "groupId": "G1001",
+      "empName": "黄龙真人",
+      "empNo": "E1002",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "indexName": "当月用户流量",
+      "historyGrandValue": "29",
+      "groupId": "G1001",
+      "empName": "云中子",
+      "empNo": "E1002",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "indexName": "当月用户流量",
+      "historyGrandValue": "29",
+      "groupId": "G1001",
+      "empName": "赤精子",
+      "empNo": "E1002",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "indexName": "当月用户流量",
+      "historyGrandValue": "32",
+      "groupId": "G1001",
+      "empName": "元始天尊",
+      "empNo": "E1002",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "indexName": "当月用户流量",
+      "historyGrandValue": "29",
+      "groupId": "G1001",
+      "empName": "灵宝大法师",
+      "empNo": "E1002",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "indexName": "当月用户流量",
+      "historyGrandValue": "29",
+      "groupId": "G1001",
+      "empName": "文殊广法天尊",
+      "empNo": "E1002",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "indexName": "当月用户流量",
+      "historyGrandValue": "29",
+      "groupId": "G1001",
+      "empName": "普贤真人",
+      "empNo": "E1002",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "indexName": "当月用户流量",
+      "historyGrandValue": "29",
+      "groupId": "G1001",
+      "empName": "慈航道人",
+      "empNo": "E1002",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "indexName": "当月用户流量",
+      "historyGrandValue": "29",
+      "groupId": "G1001",
+      "empName": "玉鼎真人",
+      "empNo": "E1002",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "indexName": "当月用户流量",
+      "historyGrandValue": "29",
+      "groupId": "G1001",
+      "empName": "道德真君",
+      "empNo": "E1002",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "indexName": "当月用户流量",
+      "historyGrandValue": "29",
+      "groupId": "G1001",
+      "empName": "道行天尊",
+      "empNo": "E1002",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "indexName": "当月用户流量",
+      "historyGrandValue": "29",
+      "groupId": "G1001",
+      "empName": "太乙真人",
+      "empNo": "E1002",
+      "indexUnit": "人",
+      "indexCode": "A"
+    },
+    {
+      "indexName": "当月用户流量",
+      "historyGrandValue": "29",
+      "groupId": "G1001",
+      "empName": "度厄真人",
+      "empNo": "E1002",
+      "indexUnit": "人",
+      "indexCode": "A"
+    }
+  ]
+}

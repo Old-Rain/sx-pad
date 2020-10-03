@@ -30,7 +30,7 @@ const Home: FC<HomeProps> = (props: PropsWithChildren<HomeProps>) => {
     const { data: res } = (await deptCoreIndexByHalfYear<EmFieldIndicatorRes[]>()) || { data: {} }
 
     if (!res || res.code !== '00') {
-      message.error({ content: res?.message ?? '未知错误' })
+      message.error(res?.message || '未知错误')
       return
     }
 
@@ -42,7 +42,7 @@ const Home: FC<HomeProps> = (props: PropsWithChildren<HomeProps>) => {
     const { data: res } = (await deptCoreIndexByYear<{ secondaryResList: SecondaryRes[] }>()) || { data: {} }
 
     if (!res || res.code !== '00') {
-      message.error({ content: res?.message ?? '未知错误' })
+      message.error(res?.message || '未知错误')
       return
     }
 

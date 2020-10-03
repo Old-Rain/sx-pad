@@ -12,10 +12,11 @@
   }
 
   .datePicker {
+    width: 280px;
     height: 40px;
 
     & :global(.ant-picker-input) {
-      padding-left: 20px;
+      padding-left: 48px;
 
       & :global(.ant-picker-suffix) {
         position: absolute;

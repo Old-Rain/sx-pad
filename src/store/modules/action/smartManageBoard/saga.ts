@@ -23,7 +23,7 @@ export function* SMB__GET_DEPT_INDEX() {
 
   // 请求失败
   if (!res || res.code !== '00') {
-    message.error({ content: res?.message ?? '未知错误' })
+    message.error(res?.message || '未知错误')
     return
   }
 

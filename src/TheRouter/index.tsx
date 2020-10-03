@@ -17,10 +17,10 @@ const TheRouter: FC<TheRouterProps> = (props: PropsWithChildren<TheRouterProps>)
   const [routes, setRoutes] = useState<RouteC[]>([])
 
   // 监听用户权限等级回调函数缓存
-  const authLvCallBack: UseAuthLvFn = useCallback<UseAuthLvFn>((lv) => updateRoutes(lv), [])
+  const authLvCallback: UseAuthLvFn = useCallback<UseAuthLvFn>((lv) => updateRoutes(lv), [])
 
   // 监听用户权限等级，更新路由
-  useAuthLv(authLvCallBack)
+  useAuthLv(authLvCallback)
 
   // 更新路由
   function updateRoutes(lv: number) {

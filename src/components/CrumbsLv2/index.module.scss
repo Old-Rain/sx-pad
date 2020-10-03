@@ -1,0 +1,15 @@
+@import '~@/styles/global.scss';
+
+.CrumbsLv2 {
+  display: flex;
+  font-size: 14px;
+
+  button,
+  span {
+    margin-right: 8px;
+  }
+
+  button {
+    color: $textColorSub2;
+  }
+}

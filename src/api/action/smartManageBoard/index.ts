@@ -16,7 +16,7 @@ export function selectDeptIndex<T>(data: SelectDeptIndexData) {
 // 指标下榜单组
 export function selecGroupIndex<T>(data: SelecGroupIndexData) {
   return request<Res<T>>({
-    url: `${baseURL}/mock/action/smartManageBoard/selecGroupIndex${data.mark}.json`,
+    url: `${baseURL}/mock/action/smartManageBoard/selectGroupIndex${data.mark}.json`,
     method: 'GET',
     data,
   })
@@ -25,7 +25,7 @@ export function selecGroupIndex<T>(data: SelecGroupIndexData) {
 // 榜单组内业务员
 export function selecStaffIndex<T>(data: SelecStaffIndexData) {
   return request<Res<T>>({
-    url: `${baseURL}/mock/action/smartManageBoard/selecStaffIndex${data.mark}.json`,
+    url: `${baseURL}/mock/action/smartManageBoard/selectStaffIndex${data.mark}.json`,
     method: 'GET',
     data,
   })

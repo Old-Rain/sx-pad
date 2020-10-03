@@ -15,7 +15,7 @@ const routes: RouteC[] = [
   },
   {
     name: '客户经营漏斗详情',
-    path: '/action/smartManageBoard/CustomerOperationDetail',
+    path: '/action/smartManageBoard/customerOperationDetail',
     component: CustomerOperationDetail,
   },
   {

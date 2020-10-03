@@ -1,0 +1,105 @@
+@import '~@/styles/global.scss';
+
+.CustomerOperationDetail {
+  @include pageBase(24px);
+
+  // 头部
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 16px;
+  }
+
+  // 身体
+  .body {
+    display: flex;
+    min-height: calc(100vh - 152px);
+
+    .bodyLeft {
+      flex: 1;
+      padding: 0 0 4px 16px;
+      min-width: 380px;
+      background: #fff;
+      border-radius: 8px 0 0 8px;
+    }
+
+    .bodyMiddle {
+      flex-shrink: 0;
+      flex-grow: 0;
+      width: 18px;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff);
+    }
+
+    .bodyRight {
+      flex: 2;
+      padding: 0 16px 16px 10px;
+      width: 18px;
+      background: #fff;
+      border-radius: 0 8px 8px 0;
+    }
+  }
+
+  // 左侧指标列表
+  .indexList {
+    .indexItem {
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+      margin-bottom: 12px;
+      height: 40px;
+      background: #7a83cc;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .indexItemActived {
+      width: 100% !important;
+      background: #f2c961;
+      color: $textColorPrimary;
+    }
+  }
+
+  // 右侧小卡片组
+  .smallCardGroup {
+    display: flex;
+    margin: 0 -8px;
+
+    .smallCard {
+      flex: 1;
+      margin: 0 8px;
+      padding-top: 24px;
+      height: 98px;
+      background: #f7f7f7;
+      border-radius: 8px;
+
+      p {
+        text-align: center;
+        font-size: 14px;
+
+        &:first-child {
+          height: 32px;
+          line-height: 32px;
+          .big {
+            font-size: 28px;
+            .unit {
+              font-size: 14px;
+            }
+          }
+        }
+
+        &:last-child {
+          margin-top: 8px;
+          color: $textColorSub2;
+        }
+      }
+    }
+  }
+
+  // 榜单标题
+  .noticeOrdeTitle {
+    margin-top: 16px;
+    height: 40px;
+  }
+}

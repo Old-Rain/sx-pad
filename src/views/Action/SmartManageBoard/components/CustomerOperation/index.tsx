@@ -2,31 +2,20 @@
  * 客户经营漏斗
  */
 
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useState, useCallback } from 'react'
 import { FC, PropsWithChildren } from 'react'
-import { useHistory } from 'react-router-dom'
-import { Unsubscribe } from 'redux'
+import { useHistory, useRouteMatch } from 'react-router-dom'
 
-import store from '@/store'
-import { SMART_MANAGE_BOARD } from '@/store/modules/action/smartManageBoard/actionTypes'
+import useAutoIndex, { getDeptIndexResList } from '@/views/Action/SmartManageBoard/useDefinedHooks/useAutoIndex'
 import { DeptIndexRes } from '@/store/modules/action/smartManageBoard/types'
 import { px2vw } from '@/utils/tools'
+import { CustomerOperationDetailInfo } from '@/views/Action/SmartManageBoard/views/CustomerOperationDetail/types'
 
 import LayoutCard from '@/components/LayoutCard'
 import Inclined from '@/components/Inclined'
 
 import styles from './index.module.scss'
 import { primaryIndexConfigList, subIndexConfigList } from './colorConfig'
-
-// 派发获取指标
-function dispatchGetDeptIndexResList() {
-  store.dispatch({ type: SMART_MANAGE_BOARD.GET_DEPT_INDEX })
-}
-
-// 从store获取指标
-function getDeptIndexResList() {
-  return store.getState().smartManageBoardModule.deptIndexResList
-}
 
 // 数据值格式化
 function valFormat(val: string | null) {
@@ -57,31 +46,25 @@ interface CustomerOperationProps {}
 
 const CustomerOperation: FC<CustomerOperationProps> = (props: PropsWithChildren<CustomerOperationProps>) => {
   const history = useHistory()
-  
-  // 卸载redux监听
-  const unsubscribe = useRef<Unsubscribe>()
+  const match = useRouteMatch()
 
   // 指标数据
   const [deptIndexResList, setDeptIndexResList] = useState<DeptIndexRes[]>(getDeptIndexResList())
 
-  useEffect(() => {
-    unsubscribe.current = store.subscribe(() => {
-      setDeptIndexResList(getDeptIndexResList())
+  // 获取指标数据cb
+  const getDeptIndexResListCallback = useCallback(() => setDeptIndexResList(getDeptIndexResList()), [])
+
+  // 转到详情页
+  function toDetail(value: CustomerOperationDetailInfo) {
+    history.push({
+      pathname: `${match.path}/customerOperationDetail`,
+      state: { ...value },
     })
+  }
 
-    // 没有数据则派发申请
-    if (!deptIndexResList.length) {
-      dispatchGetDeptIndexResList()
-    }
+  // 自动获取指标
+  useAutoIndex(getDeptIndexResListCallback)
 
-    return () => {
-      unsubscribe.current!()
-    }
-
-    // eslint-disable-next-line
-  }, [])
-
-  // history.push('/action/smartManageBoard/CustomerOperationDetail')
   return (
     <div className={styles.CustomerOperation}>
       <LayoutCard extraClass={styles.card}>
@@ -108,7 +91,18 @@ const CustomerOperation: FC<CustomerOperationProps> = (props: PropsWithChildren<
             <div className={styles.iTr} key={index}>
               {/* 主指标-名称 */}
               <div className={styles.iTd} style={{ background: primaryIndexConfigList[index].color }}>
-                <button>{item.indexName}</button>
+                <button
+                  onClick={() =>
+                    toDetail({
+                      indexType: '主指标',
+                      indexCode: item.indexCode,
+                      indexKey: 'deptIndexResList',
+                      indexIndex: index,
+                    })
+                  }
+                >
+                  {item.indexName}
+                </button>
               </div>
 
               {/* 主指标-当月累计值 */}
@@ -175,7 +169,18 @@ const CustomerOperation: FC<CustomerOperationProps> = (props: PropsWithChildren<
                     {/* 子指标-人均标杆值 */}
                     <div className={styles.iTdD}>{valFormat(item1.grandValue)}</div>
                     <div className={styles.iTdD}>
-                      <button>详情</button>
+                      <button
+                        onClick={() =>
+                          toDetail({
+                            indexType: '子指标',
+                            indexCode: item1.indexCode,
+                            indexKey: 'secondaryIndexList',
+                            indexIndex: item1.realIndex!,
+                          })
+                        }
+                      >
+                        详情
+                      </button>
                     </div>
                   </div>
                 ))}

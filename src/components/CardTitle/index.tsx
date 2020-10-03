@@ -21,7 +21,7 @@ interface CardTitleProps {
 
 const CardTitle: FC<CardTitleProps> = (props: PropsWithChildren<CardTitleProps>) => {
   return (
-    <div className={[styles.CardTitle, styles.extraTitleClass].join(' ')}>
+    <div className={[styles.CardTitle, props.extraTitleClass].join(' ')}>
       <span className={styles.block}></span>
       <h3>{props.title}</h3>
     </div>

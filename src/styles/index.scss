@@ -59,12 +59,23 @@ button,
   line-height: 1;
 }
 
-.ingore-fz {
+// tab栏
+.ant-tabs {
+  overflow: visible;
+}
+.ant-tabs .ant-tabs-nav::before {
+  border: 0;
+}
+.ant-tabs-nav-wrap {
+  height: 40px;
+}
+.ant-tabs-ink-bar {
+  background: $themeColor;
+}
+.ant-tabs-tab .ant-tabs-tab-btn {
   font-size: 16px;
 }
-
-.block {
-  width: 2px;
-  height: 1px;
-  background: #000;
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  font-weight: bold;
+  color: $themeColor;
 }

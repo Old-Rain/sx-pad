@@ -1,0 +1,208 @@
+@import '~@/styles/global.scss';
+
+// 排名
+@mixin rankNo($size: 24px) {
+  width: $size;
+  height: $size;
+  background: url('~@/assets/spirit.png') no-repeat;
+  background-size: $size;
+
+  &.rankNo_1 {
+    background-position: 0 $size * -6;
+  }
+  &.rankNo_2 {
+    background-position: 0 $size * -7;
+  }
+  &.rankNo_3 {
+    background-position: 0 $size * -8;
+  }
+}
+
+// 排序按钮
+.sort {
+  width: 20px;
+  height: 20px;
+  background: url('~@/assets/sort.png') no-repeat;
+  background-size: 20px;
+
+  &.sortUp {
+    background-position: 0 0;
+  }
+
+  &.sortDown {
+    background-position: 0 -20px;
+  }
+}
+
+.NoticeOrde {
+  position: relative;
+
+  // 榜单排序按钮
+  .groupFlagBtn {
+    position: absolute;
+    left: 56px;
+    top: -86px;
+  }
+
+  // 列表容器
+  .sortListWrap {
+    display: flex;
+    align-items: flex-start;
+
+    // 左边列表
+    .sortListLeft {
+      flex: 1;
+      overflow: auto;
+      padding-right: 14px;
+      max-width: calc(50% - 14px);
+      max-height: 650px;
+    }
+
+    // 右边列表
+    .sortListRight {
+      flex: 1;
+      padding: 0 16px 24px 24px;
+      max-width: 50%;
+      background: #f7f7f7;
+      border-radius: 8px;
+
+      .title {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        font-size: 16px;
+
+        .staffFlagBtn {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+
+  // 左边列表项
+  .leftItem {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    height: 56px;
+    border: 1px solid $line;
+    border-radius: 4px;
+    &.actived {
+      background: #fff4df;
+      border: 1px solid #f2c961;
+    }
+
+    // 排名
+    .leftItemRank {
+      float: left;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 54px;
+      height: 54px;
+
+      .groupRankNo_ {
+        @include rankNo;
+      }
+    }
+
+    // 信息
+    .leftItemInfo {
+      float: left;
+      padding: 3px 0;
+      width: calc(100% - 86px);
+      height: 54px;
+
+      p:nth-child(1) {
+        line-height: 28px;
+        font-size: 14px;
+      }
+      p:nth-child(2) {
+        line-height: 20px;
+        font-size: 12px;
+        color: $textColorSub2;
+      }
+    }
+  }
+
+  // 右边表格
+  .rightTable {
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: calc(100% - 8px);
+      height: 1px;
+      background: $line;
+      z-index: 9;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+
+    .rightScrollView {
+      overflow: auto;
+      max-height: 445px;
+
+      table {
+        margin-right: 8px;
+        width: calc(100% - 8px);
+        border-collapse: collapse;
+        text-align: left;
+
+        tr {
+          // display: ;
+
+          th,
+          td {
+            padding-left: 16px;
+            line-height: 34px;
+            font-size: 14px;
+            border: 1px solid $line;
+          }
+
+          th {
+            color: $textColorSub2;
+          }
+
+          th:nth-child(1),
+          td:nth-child(1) {
+            width: 70px;
+          }
+
+          td:nth-child(1) {
+            .empRankNo_ {
+              display: block;
+              text-align: center;
+              font-style: normal;
+              line-height: 20px;
+
+              @include rankNo(20px);
+
+              &.noRank {
+                background: transparent;
+              }
+            }
+          }
+
+          th:nth-child(2),
+          td:nth-child(2) {
+            // flex: 3;
+            width: 110px;
+          }
+
+          th:nth-child(3),
+          td:nth-child(3) {
+            flex: 4;
+          }
+        }
+      }
+    }
+  }
+}

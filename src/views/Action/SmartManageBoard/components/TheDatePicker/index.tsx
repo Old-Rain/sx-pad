@@ -32,8 +32,6 @@ function updateMonth(value: Moment | null, dateString: string) {
 
 // 禁止选择的时间
 function disabledDate(date: Moment) {
-  console.log()
-
   // 当前时间
   const nowD = new Date()
   const currentYear = nowD.getFullYear()

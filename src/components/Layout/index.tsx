@@ -10,7 +10,7 @@ import styles from './index.module.scss'
 
 interface LayoutProps {
   /**
-   * 标题额外样式
+   * 额外样式
    */
   extraClass?: string
 

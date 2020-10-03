@@ -39,18 +39,18 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
   const [selectedKeys, setSelectedKeys] = useState(currentKeys(props.location.pathname))
 
   // 监听用户权限等级回调函数缓存
-  const authLvCallBack = useCallback<UseAuthLvFn>((lv) => updateMenu(lv), [])
+  const authLvCallback = useCallback<UseAuthLvFn>((lv) => updateMenu(lv), [])
 
   // 监听用户权限等级，更新菜单列表
-  useAuthLv(authLvCallBack)
+  useAuthLv(authLvCallback)
 
   // 监听url回调函数缓存
-  const listenerCallBack = useCallback<UseListenerURLFn>((listener, action) => {
+  const listenerCallback = useCallback<UseListenerURLFn>((listener, action) => {
     setSelectedKeys(currentKeys(listener.pathname))
   }, [])
 
   // 监听页面url，更新选中的菜单项
-  useListenerURL(listenerCallBack)
+  useListenerURL(listenerCallback)
 
   // 更新菜单
   function updateMenu(lv: number) {

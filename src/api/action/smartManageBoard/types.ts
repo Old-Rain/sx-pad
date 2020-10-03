@@ -14,6 +14,12 @@ export interface SelectDeptIndexData {
 }
 
 /**
+ * 榜单类型
+ * 1累计 2人均 3历史累计 4历史人均
+ */
+export type Mark = 1 | 2 | 3 | 4
+
+/**
  * 指标下榜单组
  */
 export interface SelecGroupIndexData {
@@ -24,9 +30,8 @@ export interface SelecGroupIndexData {
 
   /**
    * 主指标下榜单组类型
-   * 1累计 2人均 3历史累计 4历史人均
    */
-  mark: 1 | 2 | 3 | 4
+  mark: Mark
 
   /**
    * 主指标类型

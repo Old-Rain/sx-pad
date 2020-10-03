@@ -51,10 +51,11 @@
 
     // 左边列表
     .sortListLeft {
-      flex: 1;
+      flex-shrink: 0;
+      flex-grow: 0;
       overflow: auto;
       padding-right: 14px;
-      max-width: calc(50% - 14px);
+      width: calc(45% - 14px);
       max-height: 650px;
     }
 
@@ -62,7 +63,7 @@
     .sortListRight {
       flex: 1;
       padding: 0 16px 24px 24px;
-      max-width: 50%;
+      max-width: 55%;
       background: #f7f7f7;
       border-radius: 8px;
 
@@ -111,7 +112,7 @@
     .leftItemInfo {
       float: left;
       padding: 3px 0;
-      width: calc(100% - 86px);
+      width: calc(100% - 54px);
       height: 54px;
 
       p:nth-child(1) {
@@ -148,7 +149,7 @@
 
     .rightScrollView {
       overflow: auto;
-      max-height: 445px;
+      max-height: 441px;
 
       table {
         margin-right: 8px;
@@ -157,12 +158,11 @@
         text-align: left;
 
         tr {
-          // display: ;
-
           th,
           td {
-            padding-left: 16px;
-            line-height: 34px;
+            padding: 0 16px;
+            height: 40px;
+            line-height: 16px;
             font-size: 14px;
             border: 1px solid $line;
           }
@@ -193,7 +193,6 @@
 
           th:nth-child(2),
           td:nth-child(2) {
-            // flex: 3;
             width: 110px;
           }
 

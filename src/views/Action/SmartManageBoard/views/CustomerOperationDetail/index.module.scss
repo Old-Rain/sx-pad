@@ -20,7 +20,7 @@
     .bodyLeft {
       flex: 1;
       padding: 0 0 4px 16px;
-      min-width: 380px;
+      max-width: 340px;
       background: #fff;
       border-radius: 8px 0 0 8px;
     }
@@ -35,7 +35,7 @@
     .bodyRight {
       flex: 2;
       padding: 0 16px 16px 10px;
-      width: 18px;
+      // width: 18px;
       background: #fff;
       border-radius: 0 8px 8px 0;
     }

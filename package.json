@@ -39,7 +39,8 @@
     "node-sass": "^4.14.1",
     "postcss-px-to-viewport": "^1.1.1",
     "react-app-rewire-postcss": "^3.0.2",
-    "react-app-rewired": "^2.1.6"
+    "react-app-rewired": "^2.1.6",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -7,6 +7,10 @@ import './styles/index.scss'
 import App from './zApp/App'
 import * as serviceWorker from './serviceWorker'
 
+
+console.log('东风吹散梁溪晚，运河不禁向北流');
+
+
 ReactDOM.render(
   // <React.StrictMode>
   //   <App />

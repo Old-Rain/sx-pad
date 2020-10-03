@@ -9,22 +9,21 @@ const {
   addLessLoader,
   overrideDevServer,
   watchAll,
+  addWebpackPlugin,
 } = require('customize-cra')
 const rewirePostcss = require('react-app-rewire-postcss')
 const postcssNormalize = require('postcss-normalize')
 
-/* const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const myPlugin = [
-  new UglifyJsPlugin({
-    uglifyOptions: {
-      warnings: false,
-      compress: {
-        drop_debugger: true,
-        drop_console: true,
-      },
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const myPlugin = new UglifyJsPlugin({
+  uglifyOptions: {
+    warnings: false,
+    compress: {
+      drop_debugger: true,
+      drop_console: true,
     },
-  }),
-] */
+  },
+})
 
 module.exports = {
   webpack: override(
@@ -45,6 +44,7 @@ module.exports = {
           '@primary-color': '#1DA57A',
         },
       }), */
+    process.env.NODE_ENV === 'production' && addWebpackPlugin(myPlugin),
     addWebpackAlias({
       //路径别名
       '@': path.resolve(__dirname, 'src'),

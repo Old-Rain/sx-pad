@@ -61,6 +61,10 @@
 
       button {
         color: $themeColor;
+
+        &:disabled {
+          opacity: 0.6;
+        }
       }
     }
 

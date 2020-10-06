@@ -3,7 +3,7 @@
  */
 
 import React, { forwardRef, useImperativeHandle, useRef, useEffect, useState, useLayoutEffect } from 'react'
-import { ForwardRefExoticComponent, RefAttributes } from 'react'
+import { ForwardRefExoticComponent, RefAttributes, ForwardRefRenderFunction } from 'react'
 
 import { isMobile, px2vw, domOffset, rangeInt } from '@/utils/tools'
 
@@ -70,10 +70,8 @@ interface Animate {
   scale: number
 }
 
-const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfirm>> = forwardRef<
-  PuzzleComfirm,
-  PuzzleProps
->((props, ref) => {
+// Puzzle的forward渲染组件
+const PuzzleFF: ForwardRefRenderFunction<PuzzleComfirm, PuzzleProps> = (props, ref) => {
   const { bgList, visible, enableSoup } = props
 
   // 验证状态
@@ -349,7 +347,10 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
 
         {/* 提示 */}
         <p className={styles.tip}>
-          <span>拖动下方滑块完成拼图</span> <button onClick={reload}>刷新</button>
+          <span>拖动下方滑块完成拼图</span>{' '}
+          <button disabled={validate} onClick={reload}>
+            刷新
+          </button>
         </p>
 
         {/* 核心 */}
@@ -407,6 +408,11 @@ const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfir
       <img className={styles.transit} ref={transitRef} alt="" />
     </div>
   )
-})
+}
+
+const Puzzle: ForwardRefExoticComponent<PuzzleProps & RefAttributes<PuzzleComfirm>> = forwardRef<
+  PuzzleComfirm,
+  PuzzleProps
+>(PuzzleFF)
 
 export default Puzzle

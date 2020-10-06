@@ -2,7 +2,7 @@
  * 卡片标题
  */
 
-import React from 'react'
+import React, { memo } from 'react'
 import { FC, PropsWithChildren } from 'react'
 
 import styles from './index.module.scss'
@@ -28,4 +28,4 @@ const CardTitle: FC<CardTitleProps> = (props: PropsWithChildren<CardTitleProps>)
   )
 }
 
-export default CardTitle
+export default memo(CardTitle)

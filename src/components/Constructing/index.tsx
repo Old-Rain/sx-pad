@@ -2,7 +2,7 @@
  * 页面构建中
  */
 
-import React from 'react'
+import React, { memo } from 'react'
 import { FC, PropsWithChildren } from 'react'
 
 import styles from './index.module.scss'
@@ -22,4 +22,4 @@ const Constructing: FC<ConstructingProps> = (props: PropsWithChildren<Constructi
   )
 }
 
-export default Constructing
+export default memo(Constructing)

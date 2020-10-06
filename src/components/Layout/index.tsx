@@ -2,7 +2,7 @@
  * 布局容器
  */
 
-import React from 'react'
+import React, { memo } from 'react'
 import { ReactNode } from 'react'
 import { FC, PropsWithChildren } from 'react'
 
@@ -21,4 +21,4 @@ const Layout: FC<LayoutProps> = (props: PropsWithChildren<LayoutProps>) => {
   return <div className={[styles.Layout, props.extraClass].join(' ')}>{props.children}</div>
 }
 
-export default Layout
+export default memo(Layout)

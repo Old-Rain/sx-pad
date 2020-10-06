@@ -2,7 +2,7 @@
  * 页面丢失
  */
 
-import React from 'react'
+import React, { memo } from 'react'
 import { FC, PropsWithChildren } from 'react'
 
 import styles from './index.module.scss'
@@ -17,4 +17,4 @@ const NotFound: FC<NotFoundProps> = (props: PropsWithChildren<NotFoundProps>) =>
   )
 }
 
-export default NotFound
+export default memo(NotFound)

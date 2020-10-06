@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, memo } from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { withRouter } from 'react-router-dom'
 import { RouteComponentProps } from 'react-router-dom'
@@ -103,4 +103,4 @@ const Aside: FC<AsideProps> = (props: PropsWithChildren<AsideProps>) => {
   )
 }
 
-export default withRouter(Aside)
+export default memo(withRouter(Aside))

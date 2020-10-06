@@ -2,7 +2,7 @@
  * 深度为2层的面包屑
  */
 
-import React from 'react'
+import React, { memo } from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { useHistory } from 'react-router-dom'
 
@@ -25,4 +25,13 @@ const CrumbsLv2: FC<CrumbsLv2Props> = (props: PropsWithChildren<CrumbsLv2Props>)
   )
 }
 
-export default CrumbsLv2
+export default memo(CrumbsLv2, ({ children: prevChildren }, { children: nextChildren }) => {
+  if (typeof prevChildren === 'string') {
+    prevChildren = [prevChildren]
+  }
+  if (typeof nextChildren === 'string') {
+    nextChildren = [nextChildren]
+  }
+
+  return (prevChildren as string[]).join() === (nextChildren as string[]).join()
+})

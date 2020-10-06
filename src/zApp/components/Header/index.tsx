@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, memo } from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { RouteComponentProps } from 'react-router-dom'
@@ -101,4 +101,4 @@ const Header: FC<HeaderProps> = (props: PropsWithChildren<HeaderProps>) => {
   )
 }
 
-export default withRouter(Header)
+export default memo(withRouter(Header))

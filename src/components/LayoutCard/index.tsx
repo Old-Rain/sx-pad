@@ -2,7 +2,7 @@
  * 布局卡片
  */
 
-import React from 'react'
+import React, { memo } from 'react'
 import { ReactNode } from 'react'
 import { FC, PropsWithChildren } from 'react'
 
@@ -38,4 +38,4 @@ const LayoutCard: FC<LayoutCardProps> = (props: PropsWithChildren<LayoutCardProp
   )
 }
 
-export default LayoutCard
+export default memo(LayoutCard)

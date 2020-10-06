@@ -2,7 +2,7 @@
  * 静态箭头
  */
 
-import React from 'react'
+import React, { memo } from 'react'
 import { MouseEvent } from 'react'
 import { FC, PropsWithChildren } from 'react'
 
@@ -26,4 +26,4 @@ const Arrow: FC<ArrowProps> = (props: PropsWithChildren<ArrowProps>) => {
   )
 }
 
-export default Arrow
+export default memo(Arrow)

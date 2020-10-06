@@ -49,6 +49,7 @@ const CustomerOperationDetail: FC<CustomerOperationDetailProps> = (
 ) => {
   const location = useLocation<CustomerOperationDetailInfo>()
 
+  // 当前激活的tabs
   const [activeKey, setActiveKey] = useState<string>('1')
 
   // 指标类型

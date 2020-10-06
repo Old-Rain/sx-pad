@@ -2,7 +2,7 @@
  * 懒加载过渡组件
  */
 
-import React from 'react'
+import React, { memo } from 'react'
 import { FC, PropsWithChildren } from 'react'
 
 import styles from './index.module.scss'
@@ -22,4 +22,4 @@ const Loading: FC<LoadingProps> = (props: PropsWithChildren<LoadingProps>) => {
   )
 }
 
-export default Loading
+export default memo(Loading)

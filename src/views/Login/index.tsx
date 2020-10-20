@@ -50,7 +50,7 @@ const LoginForQRCode: FC<LoginForQRCodeProps> = (props: LoginForQRCodeProps) => 
 
     QRCode.toCanvas(
       qrcodeCanvas.current, // 容器DOM
-      `${res.data}${Math.random()}`, // 数据信息
+      `${res.data}_你还真扫啊_${Math.random()}`, // 数据信息
       { margin: 1, width: px2vw(180) }, // 边距、宽高
       function (error) {}, // 错误回调
     )

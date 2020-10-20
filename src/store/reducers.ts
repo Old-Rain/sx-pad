@@ -4,7 +4,7 @@ import { ReducersMapObject } from 'redux'
 import authModule, { AuthState } from './modules/auth'
 import smartManageBoardModule, { SmartManageBoardState } from './modules/action/smartManageBoard'
 
-interface Modules {
+export interface Modules {
   authModule: AuthState
   smartManageBoardModule: SmartManageBoardState
 }

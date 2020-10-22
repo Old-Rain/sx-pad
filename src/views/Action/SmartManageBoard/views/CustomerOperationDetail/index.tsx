@@ -6,7 +6,9 @@ import React, { useState, useCallback, useEffect } from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { useLocation } from 'react-router-dom'
 
-import store from '@/store'
+import { useSelector, shallowEqual } from 'react-redux'
+import { Modules } from '@/store/reducers'
+import { SmartManageBoardState } from '@/store/modules/action/smartManageBoard'
 import { CustomerOperationIndexCommon } from '@/store/modules/action/smartManageBoard/types'
 
 import useAutoIndex from '@/views/Action/SmartManageBoard/useDefinedHooks/useAutoIndex'
@@ -37,17 +39,26 @@ const smallValueFormat = (indexItem: CustomerOperationIndexCommon, valKey: Index
   )
 }
 
-// 从store获取指标
-function getDeptIndexResList(indexKey: CustomerOperationIndexKey) {
-  return (store.getState().smartManageBoardModule as any)[indexKey] as CustomerOperationIndexCommon[]
-}
-
 interface CustomerOperationDetailProps {}
 
 const CustomerOperationDetail: FC<CustomerOperationDetailProps> = (
   props: PropsWithChildren<CustomerOperationDetailProps>,
 ) => {
   const location = useLocation<CustomerOperationDetailInfo>()
+
+  // store
+  const smartManageBoardModule = useSelector<Modules, SmartManageBoardState>(
+    (state) => state.smartManageBoardModule,
+    shallowEqual,
+  )
+
+  // 从store获取指标
+  const getDeptIndexResList = useCallback(
+    (indexKey: CustomerOperationIndexKey) => {
+      return (smartManageBoardModule as any)[indexKey] as CustomerOperationIndexCommon[]
+    },
+    [smartManageBoardModule],
+  )
 
   // 当前激活的tabs
   const [activeKey, setActiveKey] = useState<string>('1')
@@ -68,7 +79,10 @@ const CustomerOperationDetail: FC<CustomerOperationDetailProps> = (
   const [indexIndex, setIndexIndex] = useState<number>(location.state?.indexIndex || 0)
 
   // 获取指标数据cb
-  const getDeptIndexResListCallback = useCallback(() => setIndexList(getDeptIndexResList(indexKey)), [indexKey])
+  const getDeptIndexResListCallback = useCallback(() => setIndexList(getDeptIndexResList(indexKey)), [
+    getDeptIndexResList,
+    indexKey,
+  ])
 
   useEffect(() => {
     setActiveKey('1')

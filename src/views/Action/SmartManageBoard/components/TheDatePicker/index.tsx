@@ -2,11 +2,12 @@
  * 看板全局时间
  */
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useMemo } from 'react'
 import { FC, PropsWithChildren } from 'react'
-import { Unsubscribe } from 'redux'
 
-import store from '@/store'
+import { Dispatch } from 'redux'
+import { useDispatch, useSelector, shallowEqual } from 'react-redux'
+import { Modules, CommonAction } from '@/store/reducers'
 import { SMART_MANAGE_BOARD } from '@/store/modules/action/smartManageBoard/actionTypes'
 
 import moment, { Moment } from 'moment'
@@ -15,20 +16,6 @@ import { getMonthLastDay } from '@/utils/tools'
 import { DatePicker } from 'antd'
 
 import styles from './index.module.scss'
-
-// 获取看板全局时间
-function getMonth() {
-  return store.getState().smartManageBoardModule.smartManageBoardMonth
-}
-
-// 更新看板全局时间、派发获取指标
-function updateMonth(value: Moment | null, dateString: string) {
-  store.dispatch({
-    type: SMART_MANAGE_BOARD.UPDATE_MONTH,
-    value: dateString,
-  })
-  store.dispatch({ type: SMART_MANAGE_BOARD.GET_DEPT_INDEX })
-}
 
 // 禁止选择的时间
 function disabledDate(date: Moment) {
@@ -103,25 +90,29 @@ interface TheDatePickerProps {
 }
 
 const TheDatePicker: FC<TheDatePickerProps> = (props: PropsWithChildren<TheDatePickerProps>) => {
+  const dispatch = useDispatch<Dispatch<CommonAction>>()
+
+  // 看板全局时间
+  const smartManageBoardMonth = useSelector<Modules, string>(
+    (state) => state.smartManageBoardModule.smartManageBoardMonth,
+    shallowEqual,
+  )
+
   // 月份时间
-  const [month, setMonth] = useState(moment(getMonth()))
+  const month = useMemo(() => moment(smartManageBoardMonth), [smartManageBoardMonth])
 
-  // 卸载redux监听
-  const unsubscribe = useRef<Unsubscribe>()
-
-  useEffect(() => {
-    unsubscribe.current = store.subscribe(() => {
-      setMonth(moment(getMonth()))
+  // 更新看板全局时间、派发获取指标
+  function updateMonth(value: Moment | null, dateString: string) {
+    dispatch({
+      type: SMART_MANAGE_BOARD.UPDATE_MONTH,
+      value: dateString,
     })
-
-    return () => {
-      unsubscribe.current!()
-    }
-  }, [])
+    dispatch({ type: SMART_MANAGE_BOARD.GET_DEPT_INDEX })
+  }
 
   return (
     <div className={[styles.TheDatePicker, props.extraClass].join(' ')}>
-      <div className={styles.dateFormat}>统计时间：{statisticsDateFormat(moment(getMonth()).format('YYYY-MM'))}</div>
+      <div className={styles.dateFormat}>统计时间：{statisticsDateFormat(moment(month).format('YYYY-MM'))}</div>
       <DatePicker
         picker="month"
         allowClear={false}

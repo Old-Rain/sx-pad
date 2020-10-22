@@ -1,23 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { FC, PropsWithChildren } from 'react'
-import { Unsubscribe } from 'redux'
 
-import store from '@/store'
+import { useSelector, shallowEqual } from 'react-redux'
+import { Modules } from '@/store/reducers'
+import { CustomerOperationIndexCommon } from '@/store/modules/action/smartManageBoard/types'
+
 import { selecGroupIndex, selecStaffIndex } from '@/api/action/smartManageBoard'
 import { SelecGroupIndexData, SelecStaffIndexData } from '@/api/action/smartManageBoard/types'
 import { Mark } from '@/api/action/smartManageBoard/types'
-import { CustomerOperationIndexCommon } from '@/store/modules/action/smartManageBoard/types'
 import { GroupIndex, StaffIndex } from './types'
 
 import { message } from 'antd'
 
 import styles from './index.module.scss'
 import { fieldsMap } from './fieldsConfig'
-
-// 获取看板全局时间
-function getMonth() {
-  return store.getState().smartManageBoardModule.smartManageBoardMonth
-}
 
 interface NoticeOrdeProps {
   /**
@@ -70,18 +66,21 @@ interface NoticeOrdeState {
 }
 
 const NoticeOrde: FC<NoticeOrdeProps> = (props: PropsWithChildren<NoticeOrdeProps>) => {
+  // 看板全局时间
+  const month = useSelector<Modules, string>(
+    (state) => state.smartManageBoardModule.smartManageBoardMonth,
+    shallowEqual,
+  )
+
   // 左边列表ref
   const sortListLeftRef = useRef<HTMLDivElement>(null)
 
   // 右边表格滚动视口ref
   const rightScrollViewRef = useRef<HTMLDivElement>(null)
 
-  // 卸载redux监听
-  const unsubscribe = useRef<Unsubscribe>()
-
   // 入参
   const [state, setState] = useState<NoticeOrdeState>({
-    month: getMonth(),
+    month: month,
     currentIndex: props.currentIndex,
     groupFlag: true,
     staffFlag: true,
@@ -246,17 +245,6 @@ const NoticeOrde: FC<NoticeOrdeProps> = (props: PropsWithChildren<NoticeOrdeProp
 
     // eslint-disable-next-line
   }, [props.currentIndex])
-
-  // 监听全局时间，赋值给入参
-  useEffect(() => {
-    unsubscribe.current = store.subscribe(() => {
-      stateRef.current.month = getMonth()
-    })
-
-    return () => {
-      unsubscribe.current!()
-    }
-  }, [])
 
   return (
     <div className={styles.NoticeOrde}>

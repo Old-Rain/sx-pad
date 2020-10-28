@@ -4,7 +4,7 @@ import { ReducersMapObject } from 'redux'
 import authModule, { AuthState } from './modules/auth'
 import smartManageBoardModule, { SmartManageBoardState } from './modules/action/smartManageBoard'
 
-export interface Modules {
+export interface StoreModules {
   authModule: AuthState
   smartManageBoardModule: SmartManageBoardState
 }
@@ -14,7 +14,7 @@ export interface CommonAction<T = any> {
   value?: T
 }
 
-const reducersMap: ReducersMapObject<Modules, CommonAction> = {
+const reducersMap: ReducersMapObject<StoreModules, CommonAction> = {
   authModule,
   smartManageBoardModule,
 }

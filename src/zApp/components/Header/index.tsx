@@ -3,7 +3,9 @@ import { FC, PropsWithChildren } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { RouteComponentProps } from 'react-router-dom'
 
-import store from '@/store'
+import { Dispatch } from 'redux'
+import { useDispatch } from 'react-redux'
+import { CommonAction } from '@/store/reducers'
 import { AUTH } from '@/store/modules/auth/actionTypes'
 
 import { useAuthLv } from '@/useDefinedHooks'
@@ -18,6 +20,8 @@ import { authList } from './authConfig'
 interface HeaderProps extends RouteComponentProps {}
 
 const Header: FC<HeaderProps> = (props: PropsWithChildren<HeaderProps>) => {
+  const dispatch = useDispatch<Dispatch<CommonAction>>()
+  
   // 用户等级权限
   const authLv = useAuthLv()
 
@@ -29,7 +33,7 @@ const Header: FC<HeaderProps> = (props: PropsWithChildren<HeaderProps>) => {
     clearUserInfo()
 
     // 卸载所有权限
-    store.dispatch({ type: AUTH.UPDATE_AUTH_LV })
+    dispatch({ type: AUTH.UPDATE_AUTH_LV })
 
     props.history.push('/login')
   }
@@ -82,7 +86,7 @@ const Header: FC<HeaderProps> = (props: PropsWithChildren<HeaderProps>) => {
                           className={item.authLv === authLv ? styles.authLvActived : ''}
                           onClick={() => {
                             updateUserInfo(item.authLv)
-                            store.dispatch({ type: AUTH.UPDATE_AUTH_LV })
+                            dispatch({ type: AUTH.UPDATE_AUTH_LV })
                           }}
                         >
                           {item.label}

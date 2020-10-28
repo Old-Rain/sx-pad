@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { RouteComponentProps } from 'react-router-dom'
 
-import store from '@/store'
+import { Dispatch } from 'redux'
+import { useDispatch } from 'react-redux'
+import { CommonAction } from '@/store/reducers'
 import { AUTH } from '@/store/modules/auth/actionTypes'
 
 import QRCode from 'qrcode'
@@ -120,6 +122,8 @@ const passwordRules = [
 ]
 
 const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
+  const dispatch = useDispatch<Dispatch<CommonAction>>()
+  
   const [form] = Form.useForm<UserForm>()
   const [puzzleVisible, setPuzzleVisible] = useState<boolean>(false)
   const puzzleRef = useRef<PuzzleComfirm>(null)
@@ -149,7 +153,7 @@ const LoginForUser: FC<LoginForUserProps> = (props: LoginForUserProps) => {
     saveUserInfo(res.data)
 
     // 更新权限
-    store.dispatch({ type: AUTH.UPDATE_AUTH_LV })
+    dispatch({ type: AUTH.UPDATE_AUTH_LV })
 
     props.history.push('/home')
   }

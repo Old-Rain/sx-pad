@@ -7,7 +7,7 @@ import { FC, PropsWithChildren } from 'react'
 
 import { Dispatch } from 'redux'
 import { useDispatch, useSelector, shallowEqual } from 'react-redux'
-import { Modules, CommonAction } from '@/store/reducers'
+import { StoreModules, CommonAction } from '@/store/reducers'
 import { SMART_MANAGE_BOARD } from '@/store/modules/action/smartManageBoard/actionTypes'
 
 import moment, { Moment } from 'moment'
@@ -93,7 +93,7 @@ const TheDatePicker: FC<TheDatePickerProps> = (props: PropsWithChildren<TheDateP
   const dispatch = useDispatch<Dispatch<CommonAction>>()
 
   // 看板全局时间
-  const smartManageBoardMonth = useSelector<Modules, string>(
+  const smartManageBoardMonth = useSelector<StoreModules, string>(
     (state) => state.smartManageBoardModule.smartManageBoardMonth,
     shallowEqual,
   )

@@ -2,18 +2,18 @@
  * 客户经营漏斗详情页
  */
 
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { useLocation } from 'react-router-dom'
 
 import { useSelector, shallowEqual } from 'react-redux'
-import { Modules } from '@/store/reducers'
+import { StoreModules } from '@/store/reducers'
 import { SmartManageBoardState } from '@/store/modules/action/smartManageBoard'
 import { CustomerOperationIndexCommon } from '@/store/modules/action/smartManageBoard/types'
 
 import useAutoIndex from '@/views/Action/SmartManageBoard/useDefinedHooks/useAutoIndex'
 import { px2vw } from '@/utils/tools'
-import { CustomerOperationDetailInfo, CustomerOperationIndexKey } from './types'
+import { CustomerOperationDetailInfo } from './types'
 
 import { Tabs } from 'antd'
 import CrumbsLv2 from '@/components/CrumbsLv2'
@@ -46,20 +46,12 @@ const CustomerOperationDetail: FC<CustomerOperationDetailProps> = (
 ) => {
   const location = useLocation<CustomerOperationDetailInfo>()
 
-  // store
-  const smartManageBoardModule = useSelector<Modules, SmartManageBoardState>(
+  // store智慧经营看板数据
+  const smartManageBoardModule = useSelector<StoreModules, SmartManageBoardState>(
     (state) => state.smartManageBoardModule,
     shallowEqual,
   )
-
-  // 从store获取指标
-  const getDeptIndexResList = useCallback(
-    (indexKey: CustomerOperationIndexKey) => {
-      return (smartManageBoardModule as any)[indexKey] as CustomerOperationIndexCommon[]
-    },
-    [smartManageBoardModule],
-  )
-
+  
   // 当前激活的tabs
   const [activeKey, setActiveKey] = useState<string>('1')
 
@@ -70,7 +62,10 @@ const CustomerOperationDetail: FC<CustomerOperationDetailProps> = (
   const indexKey = location.state?.indexKey || 'deptIndexResList'
 
   // 指标列表
-  const [indexList, setIndexList] = useState<CustomerOperationIndexCommon[]>(getDeptIndexResList(indexKey))
+  const indexList = useMemo(
+    () => (smartManageBoardModule as any)[indexKey] as CustomerOperationIndexCommon[],
+    [smartManageBoardModule, indexKey]
+  )
 
   // 指标编号
   const [indexCode, setIndexCode] = useState<string>(location.state?.indexCode || 'A')
@@ -78,18 +73,12 @@ const CustomerOperationDetail: FC<CustomerOperationDetailProps> = (
   // 指标索引
   const [indexIndex, setIndexIndex] = useState<number>(location.state?.indexIndex || 0)
 
-  // 获取指标数据cb
-  const getDeptIndexResListCallback = useCallback(() => setIndexList(getDeptIndexResList(indexKey)), [
-    getDeptIndexResList,
-    indexKey,
-  ])
-
   useEffect(() => {
     setActiveKey('1')
   }, [indexIndex])
 
   // 自动获取指标
-  useAutoIndex(getDeptIndexResListCallback)
+  useAutoIndex()
 
   return (
     <div className={styles.CustomerOperationDetail}>

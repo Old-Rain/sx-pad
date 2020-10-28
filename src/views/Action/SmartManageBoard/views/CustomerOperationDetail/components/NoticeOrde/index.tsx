@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { FC, PropsWithChildren } from 'react'
 
 import { useSelector, shallowEqual } from 'react-redux'
-import { Modules } from '@/store/reducers'
+import { StoreModules } from '@/store/reducers'
 import { CustomerOperationIndexCommon } from '@/store/modules/action/smartManageBoard/types'
 
 import { selecGroupIndex, selecStaffIndex } from '@/api/action/smartManageBoard'
@@ -67,7 +67,7 @@ interface NoticeOrdeState {
 
 const NoticeOrde: FC<NoticeOrdeProps> = (props: PropsWithChildren<NoticeOrdeProps>) => {
   // 看板全局时间
-  const month = useSelector<Modules, string>(
+  const month = useSelector<StoreModules, string>(
     (state) => state.smartManageBoardModule.smartManageBoardMonth,
     shallowEqual,
   )

@@ -2,12 +2,15 @@
  * 客户经营漏斗
  */
 
-import React, { useState, useCallback } from 'react'
+import React from 'react'
 import { FC, PropsWithChildren } from 'react'
 import { useHistory, useRouteMatch } from 'react-router-dom'
 
-import useAutoIndex, { getDeptIndexResList } from '@/views/Action/SmartManageBoard/useDefinedHooks/useAutoIndex'
+import { useSelector, shallowEqual } from 'react-redux'
+import { StoreModules } from '@/store/reducers'
 import { DeptIndexRes } from '@/store/modules/action/smartManageBoard/types'
+
+import useAutoIndex from '@/views/Action/SmartManageBoard/useDefinedHooks/useAutoIndex'
 import { px2vw } from '@/utils/tools'
 import { CustomerOperationDetailInfo } from '@/views/Action/SmartManageBoard/views/CustomerOperationDetail/types'
 
@@ -48,11 +51,10 @@ const CustomerOperation: FC<CustomerOperationProps> = (props: PropsWithChildren<
   const history = useHistory()
   const match = useRouteMatch()
 
-  // 指标数据
-  const [deptIndexResList, setDeptIndexResList] = useState<DeptIndexRes[]>(getDeptIndexResList())
-
-  // 获取指标数据cb
-  const getDeptIndexResListCallback = useCallback(() => setDeptIndexResList(getDeptIndexResList()), [])
+  const deptIndexResList = useSelector<StoreModules, DeptIndexRes[]>(
+    state => state.smartManageBoardModule.deptIndexResList,
+    shallowEqual,
+  )
 
   // 转到详情页
   function toDetail(value: CustomerOperationDetailInfo) {
@@ -63,7 +65,7 @@ const CustomerOperation: FC<CustomerOperationProps> = (props: PropsWithChildren<
   }
 
   // 自动获取指标
-  useAutoIndex(getDeptIndexResListCallback)
+  useAutoIndex()
 
   return (
     <div className={styles.CustomerOperation}>

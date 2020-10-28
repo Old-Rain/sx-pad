@@ -2,35 +2,18 @@
  * 创建用户权限等级
  */
 
-import { useState, useEffect, useRef } from 'react'
-import { Unsubscribe } from 'redux'
+import { useEffect } from 'react'
 
-import store from '@/store'
-
-// 获取用户权限等级
-function getAuthLv() {
-  return store.getState().authModule.authLv
-}
+import { useSelector } from 'react-redux'
+import { StoreModules } from '@/store/reducers'
 
 export type UseAuthLvFn = (lv: number) => any
 
 const useAuthLv = (fn?: UseAuthLvFn) => {
-  // 用户权限等级
-  const [authLv, setAuthLv] = useState<number>(getAuthLv())
-
-  // 卸载redux监听
-  const unsubscribe = useRef<Unsubscribe>()
-
-  useEffect(() => {
-    // 监听store 更新用户权限等级
-    unsubscribe.current = store.subscribe(() => {
-      setAuthLv(getAuthLv())
-    })
-
-    return () => {
-      unsubscribe.current!()
-    }
-  }, [])
+  const authLv = useSelector<StoreModules, number>(
+    state => state.authModule.authLv,
+    (left, right) => left === right,
+  )
 
   useEffect(() => {
     fn?.(authLv)
